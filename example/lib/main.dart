@@ -1,4 +1,5 @@
 import 'package:enhanced/enhanced.dart';
+import 'package:example/tappable_row.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,41 +39,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            ElevatedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (c) => const TappableRowScreen()),
+              ),
+              child: const Text('Tappable Column'),
             ),
-            TappableRow(
-              width: 240,
-              height: 120,
-              backgroundColor: Colors.yellow,
-              children: const [
-                RedBox(),
-                GreenBox(),
-                BlueBox(),
-              ],
-              flexes: const [1, 2, 3],
-              onTap: () => print('onTap'),
-              onLongPress: () => print('onLongPress'),
-              onDoubleTap: () => print('onDoulbeTap'),
-            ),
-            TappableRow(
-              // width: 240,
-              height: 150,
-              backgroundColor: Colors.black,
-              children: const [
-                RedBox(),
-                GreenBox(),
-                BlueBox(),
-              ],
-              flexes: const [3, 2, 1],
-              onTap: () => print('onTap'),
-              onLongPress: () => print('onLongPress'),
-              onDoubleTap: () => print('onDoulbeTap'),
-            ),
-            const Divider(),
-            const RedBox(),
-            const GreenBox(),
-            const BlueBox(),
           ],
         ),
       ),

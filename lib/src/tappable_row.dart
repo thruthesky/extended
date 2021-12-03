@@ -1,25 +1,38 @@
 import 'package:flutter/material.dart';
 
 class TappableRow extends StatelessWidget {
-  TappableRow(
-      {this.width,
-      this.height,
-      this.padding,
-      this.margin,
-      this.backgroundColor,
-      this.borderColor,
-      this.borderRadius,
-      this.onTap,
-      this.onLongPress,
-      this.onDoubleTap,
-      required this.children,
-      this.flexes,
-      Key? key})
-      : assert(flexes != null && flexes.length == children.length,
+  const TappableRow({
+    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisSize = MainAxisSize.max,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.textDirection,
+    this.verticalDirection = VerticalDirection.down,
+    this.textBaseline, // NO DEFAULT: we don't know what the text's baseline should be
+    this.width,
+    this.height,
+    this.padding,
+    this.margin,
+    this.backgroundColor,
+    this.borderColor,
+    this.borderRadius,
+    this.onTap,
+    this.onLongPress,
+    this.onDoubleTap,
+    required this.children,
+    this.flexes,
+    Key? key,
+  })  : assert(flexes == null || flexes.length == children.length,
             'No. of flexes must match with the No. of children'),
         super(key: key);
 
-  List<Widget> children;
+  final MainAxisAlignment mainAxisAlignment;
+  final MainAxisSize mainAxisSize;
+  final CrossAxisAlignment crossAxisAlignment;
+  final TextDirection? textDirection;
+  final VerticalDirection verticalDirection;
+  final TextBaseline? textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
+
+  final List<Widget> children;
   final List<int>? flexes;
   final double? width;
   final double? height;
@@ -34,8 +47,9 @@ class TappableRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> _children = children;
     if (flexes != null) {
-      children = _flexes(children, flexes!);
+      _children = _flexes(_children, flexes!);
     }
 
     return GestureDetector(
@@ -50,7 +64,13 @@ class TappableRow extends StatelessWidget {
           color: backgroundColor,
         ),
         child: Row(
-          children: children,
+          children: _children,
+          mainAxisAlignment: mainAxisAlignment,
+          mainAxisSize: mainAxisSize,
+          crossAxisAlignment: crossAxisAlignment,
+          textDirection: textDirection,
+          verticalDirection: verticalDirection,
+          textBaseline: textBaseline,
         ),
       ),
     );
