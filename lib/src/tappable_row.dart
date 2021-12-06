@@ -13,8 +13,9 @@ class TappableRow extends StatelessWidget {
     this.padding,
     this.margin,
     this.backgroundColor,
-    this.borderColor,
-    this.borderRadius,
+    this.borderColor = const Color(0xFFaaaaaa),
+    this.borderRadius = 0.0,
+    this.borderWidth = 0.0,
     this.onTap,
     this.onLongPress,
     this.onDoubleTap,
@@ -42,8 +43,9 @@ class TappableRow extends StatelessWidget {
   final void Function()? onTap;
   final void Function()? onLongPress;
   final void Function()? onDoubleTap;
-  final double? borderRadius;
-  final Color? borderColor;
+  final double borderRadius;
+  final Color borderColor;
+  final double borderWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +60,18 @@ class TappableRow extends StatelessWidget {
       onLongPress: onLongPress,
       onDoubleTap: onDoubleTap,
       child: Container(
+        margin: margin,
+        padding: padding,
         width: width,
         height: height,
         decoration: BoxDecoration(
           color: backgroundColor,
+          border: Border.all(
+            color: borderColor,
+            width: borderWidth,
+            style: BorderStyle.solid,
+          ),
+          borderRadius: BorderRadius.circular(borderRadius),
         ),
         child: Row(
           children: _children,

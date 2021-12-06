@@ -10,7 +10,7 @@ For instance, `Column` widget does column things only on Material widget. It doe
 
 ### Common properties
 
-All the extended widgets have as much as the common properties like below.
+- All the extended widgets have as much as the common properties like below.
     - color, 
     - backgroundColor,
     - borderColor,
@@ -25,12 +25,13 @@ All the extended widgets have as much as the common properties like below.
     - double tap
     
 
+- See the example codes and try to open the source file in the paackage. It will surely gives you an idea how the `Extended` widgets are built, and how to use.
+
 ## Getting started
 
 Just add the package name and version into your pubspec.yaml
 
 ## Usage
-
 
 ### Boxes
 
@@ -45,16 +46,18 @@ Just add the package name and version into your pubspec.yaml
 
 ```dart
 TappableRow(
-    onTap: () => {},
-    onLongTap: () => {},
-    onDoubleTap: () => {},
-    width: 200,
-    height: 300,
-    margin: ...,
-    padding: ...,
-    backgroundColor: ...,
-    children: [ ... ],
-)
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  margin: const EdgeInsets.all(16),
+  padding: const EdgeInsets.all(16),
+  backgroundColor: Colors.black,
+  borderRadius: 16,
+  borderWidth: 5.5,
+  borderColor: Colors.blueGrey,
+  children: const [RedBox(), GreenBox(), BlueBox()],
+  onTap: () => alert(context, 'onTap', 'tapped'),
+  onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
+  onLongPress: () => alert(context, 'onLongPress', 'long press'),
+),
 ```
 
 ## Additional information
