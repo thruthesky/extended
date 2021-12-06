@@ -1,3 +1,4 @@
+import 'package:enhanced/src/box/box.dart';
 import 'package:flutter/material.dart';
 
 class GreenBox extends StatelessWidget {
@@ -7,10 +8,6 @@ class GreenBox extends StatelessWidget {
   final double height;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
-      width: width,
-      height: height,
-    );
+    return Box(color: Colors.green, width: width, height: height);
   }
 }
