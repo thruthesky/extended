@@ -1,7 +1,12 @@
 # Extended
 
-`Extended` is a set of Flutter widgets that are extended based on Material and Cupertino widgets. The widgets of in this package have extra functionalities.
-For instance, `Column` widget does column things only on Material widget. It does not have background color option, nor tap handler and often we need to add those functionality to `Column` widget. And this is the reason why we have `Extended` package here. `Extended` package also provide method like `alert`.
+- `Extended` is a set of Flutter widgets that are extended based on Material and Cupertino widgets. The some of widgets in this package are simply a copy of an existing widgets in Material and Cupertino widgets with some extra properties.
+For instance, `Column` widget does column things only on Material widget. It does not have background color option, nor tap handler and often we need to add those functionality to `Column` widget. And this is one reason why we have `Extended` package here.
+
+- `Extended` package also provide methods to open dialogs like `alert`, `confirm`, etc.
+
+- `Extended` package collects some of the well known widgets in `pub.dev` and bundle them together to make a better UI widget package.
+
 
 
 
@@ -45,7 +50,7 @@ Just add the package name and version into your pubspec.yaml
 
 
 
-![Tappable Column](res/tappable_column.jpg)
+![Tappable Column](https://github.com/thruthesky/extended/raw/main/res/tappable_column.jpg)
 
 ```dart
 TappableRow(
