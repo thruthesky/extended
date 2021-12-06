@@ -44,6 +44,9 @@ Just add the package name and version into your pubspec.yaml
   - `TappableRow(children: [ RedBox(), GreenBox(), BlueBox() ], flexes: [1,2,3])`
 
 
+
+![Tappable Column](res/tappable_column.jpg)
+
 ```dart
 TappableRow(
   mainAxisAlignment: MainAxisAlignment.spaceAround,
