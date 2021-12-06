@@ -1,7 +1,7 @@
-name: enhanced
-description: Enhanced Flutter widgets based on Material and Cupertino widgets.
-version: 0.0.1
-homepage: https://github.com/thruthesky/enhanced
+name: extended
+description: A set of Flutter widgets that are extended based on Material and Cupertino widgets.
+version: 0.0.2
+homepage: https://github.com/thruthesky/extended
 
 environment:
   sdk: ">=2.12.0 <3.0.0"

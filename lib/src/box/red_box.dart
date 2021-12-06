@@ -1,4 +1,4 @@
-import 'package:enhanced/src/box/box.dart';
+import 'package:extended/src/box/box.dart';
 import 'package:flutter/material.dart';
 
 class RedBox extends StatelessWidget {

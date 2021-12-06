@@ -1,4 +1,3 @@
-import 'package:enhanced/enhanced.dart';
 import 'package:example/tappable_row.screen.dart';
 import 'package:flutter/material.dart';
 

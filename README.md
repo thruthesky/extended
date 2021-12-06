@@ -1,12 +1,16 @@
-# Enhanced
+# Extended
 
-`Enhanced` is an upgraded, handy widget collection based Material and Cupertino widgets.
+`Extended` is a set of Flutter widgets that are extended based on Material and Cupertino widgets. The widgets of in this package have extra functionalities.
+For instance, `Column` widget does column things only on Material widget. It does not have background color option, nor tap handler and often we need to add those functionality to `Column` widget. And this is the reason why we have `Extended` package here. `Extended` package also provide method like `alert`.
+
+
+
 
 ## Features
 
 ### Common properties
 
-All the enhanced widget has as much of the properties below.
+All the extended widgets have as much as the common properties like below.
     - color, 
     - backgroundColor,
     - borderColor,
