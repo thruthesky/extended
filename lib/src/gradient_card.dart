@@ -30,7 +30,7 @@ class GradientCard extends StatelessWidget {
   final TextAlign titleAlignment;
   final List<Color> gradientColors;
 
-  final List<Widget>? overlays;
+  final List<Positioned>? overlays;
 
   @override
   Widget build(BuildContext context) {
