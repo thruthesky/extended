@@ -1,5 +1,10 @@
 // import 'package:example/tappable_row.screen.dart';
+<<<<<<< HEAD
 import 'package:example/screens/tappable_column.screen.dart';
+=======
+import 'package:example/gradient_card.screen.dart';
+import 'package:extended/extended.dart';
+>>>>>>> 3bf6173adadf77c162af4c706400f95b9b2be87d
 import 'package:flutter/material.dart';
 
 void main() {
@@ -53,6 +58,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               child: const Text('Tappable Column'),
             ),
+            // ElevatedButton(
+            //   onPressed: () => Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (c) => const GradientCardScreen()),
+            //   ),
+            //   child: const Text('Gradient Card'),
+            // ),
           ],
         ),
       ),
