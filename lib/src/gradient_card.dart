@@ -5,10 +5,10 @@ class GradientCard extends StatelessWidget {
     required this.image,
     required this.title,
     this.onTap,
-    this.titleStyle,
+    this.titleStyle = const TextStyle(color: Colors.white),
     this.titleMaxLines = 1,
     this.borderRadius = 8.0,
-    this.titleBoxWidth = 0.7,
+    this.titleWidthFactor = 0.7,
     this.titleAlignment = TextAlign.center,
     this.gradientColors = const [Colors.black, Colors.transparent],
     this.textOverflow = TextOverflow.fade,
@@ -23,10 +23,10 @@ class GradientCard extends StatelessWidget {
   final Widget image;
   final String title;
   final int titleMaxLines;
-  final TextStyle? titleStyle;
+  final TextStyle titleStyle;
   final TextOverflow textOverflow;
 
-  final double titleBoxWidth;
+  final double titleWidthFactor;
   final TextAlign titleAlignment;
   final List<Color> gradientColors;
 
@@ -47,20 +47,17 @@ class GradientCard extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: gradientColors,
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                  ),
+                      colors: gradientColors,
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter),
                 ),
                 child: FractionallySizedBox(
-                  widthFactor: titleBoxWidth,
-                  child: Text(
-                    title,
-                    maxLines: titleMaxLines,
-                    textAlign: titleAlignment,
-                    overflow: textOverflow,
-                    style: titleStyle,
-                  ),
+                  widthFactor: titleWidthFactor,
+                  child: Text(title,
+                      maxLines: titleMaxLines,
+                      textAlign: titleAlignment,
+                      overflow: textOverflow,
+                      style: titleStyle),
                 ),
               ),
               left: 0,

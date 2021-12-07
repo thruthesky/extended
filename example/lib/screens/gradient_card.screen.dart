@@ -23,12 +23,12 @@ class GradientCardScreen extends StatelessWidget {
             children: <Widget>[
               GradientCard(
                 image: image,
-                title: 'Default Gradient card',
+                title: 'Default gradient card.',
               ),
               const Divider(),
               GradientCard(
                 image: image,
-                title: 'This is a title 1234 abcdefg 2 lines',
+                title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
                 titleMaxLines: 2,
                 onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
                 gradientColors: const [Colors.grey, Colors.transparent],
@@ -36,16 +36,8 @@ class GradientCardScreen extends StatelessWidget {
               const Divider(),
               GradientCard(
                 image: image,
-                title: 'This is a title 1234 abcdefg 2 lines',
-                titleMaxLines: 2,
-                titleStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
-                gradientColors: const [Colors.grey, Colors.transparent],
-              ),
-              const Divider(),
-              GradientCard(
-                image: const SizedBox(width: 200, height: 200),
-                title: 'some title',
+                title: 'Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough',
+                titleWidthFactor: 1,
                 titleMaxLines: 2,
                 onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
                 gradientColors: const [Colors.grey, Colors.transparent],
@@ -58,7 +50,7 @@ class GradientCardScreen extends StatelessWidget {
                   Positioned(
                     child: Icon(Icons.open_in_new_sharp, color: Colors.redAccent),
                     top: 10,
-                    left: 10,
+                    right: 10,
                   ),
                 ],
               ),
