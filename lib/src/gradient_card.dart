@@ -53,11 +53,13 @@ class GradientCard extends StatelessWidget {
                 ),
                 child: FractionallySizedBox(
                   widthFactor: titleWidthFactor,
-                  child: Text(title,
-                      maxLines: titleMaxLines,
-                      textAlign: titleAlignment,
-                      overflow: textOverflow,
-                      style: titleStyle),
+                  child: Text(
+                    title,
+                    maxLines: titleMaxLines,
+                    textAlign: titleAlignment,
+                    overflow: textOverflow,
+                    style: titleStyle,
+                  ),
                 ),
               ),
               left: 0,
