@@ -41,23 +41,19 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () => alert(context, 'Alert', 'Button Tapped'),
-              child: const Text('Button'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (c) => const TappableRowScreen()),
+              ),
+              child: const Text('Tappable Column'),
             ),
             // ElevatedButton(
             //   onPressed: () => Navigator.push(
             //     context,
-            //     MaterialPageRoute(builder: (c) => const TappableRowScreen()),
+            //     MaterialPageRoute(builder: (c) => const GradientCardScreen()),
             //   ),
-            //   child: const Text('Tappable Column'),
+            //   child: const Text('Gradient Card'),
             // ),
-            ElevatedButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (c) => const GradientCardScreen()),
-              ),
-              child: const Text('Gradient Card'),
-            ),
           ],
         ),
       ),
