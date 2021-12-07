@@ -36,7 +36,8 @@ class GradientCardScreen extends StatelessWidget {
               const Divider(),
               GradientCard(
                 image: image,
-                title: 'Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough',
+                title:
+                    'Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough',
                 titleWidthFactor: 1,
                 titleMaxLines: 2,
                 onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),

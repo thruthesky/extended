@@ -35,7 +35,7 @@ class GradientCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onTap != null ? onTap!() : null,
+      onTap: onTap,
       behavior: HitTestBehavior.opaque,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(borderRadius),
