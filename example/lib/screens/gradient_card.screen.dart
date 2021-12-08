@@ -24,6 +24,9 @@ class GradientCardScreen extends StatelessWidget {
               GradientCard(
                 image: image,
                 title: 'Default gradient card.',
+                onTap: () => alert(context, "Gradient Card", "ON TAP"),
+                onLongPress: () => alert(context, "Gradient Card", "ON LONG PRESS"),
+                onDoubleTap: () => alert(context, "Gradient Card", "ON DOUBLE TAP"),
               ),
               const Divider(),
               GradientCard(

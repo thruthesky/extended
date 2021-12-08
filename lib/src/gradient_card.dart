@@ -5,6 +5,8 @@ class GradientCard extends StatelessWidget {
     required this.image,
     required this.title,
     this.onTap,
+    this.onLongPress,
+    this.onDoubleTap,
     this.titleStyle = const TextStyle(color: Colors.white),
     this.titleMaxLines = 1,
     this.borderRadius = 8.0,
@@ -17,6 +19,8 @@ class GradientCard extends StatelessWidget {
   }) : super(key: key);
 
   final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
+  final VoidCallback? onDoubleTap;
 
   final double borderRadius;
 
@@ -36,6 +40,8 @@ class GradientCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => onTap != null ? onTap!() : null,
+      onLongPress: () => onLongPress != null ? onLongPress!() : null,
+      onDoubleTap: () => onDoubleTap != null ? onDoubleTap!() : null,
       behavior: HitTestBehavior.opaque,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(borderRadius),
