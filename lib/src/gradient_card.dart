@@ -39,9 +39,9 @@ class GradientCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onTap != null ? onTap!() : null,
-      onLongPress: () => onLongPress != null ? onLongPress!() : null,
-      onDoubleTap: () => onDoubleTap != null ? onDoubleTap!() : null,
+      onTap: onTap,
+      onLongPress: onLongPress,
+      onDoubleTap: onDoubleTap,
       behavior: HitTestBehavior.opaque,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(borderRadius),
@@ -59,11 +59,13 @@ class GradientCard extends StatelessWidget {
                 ),
                 child: FractionallySizedBox(
                   widthFactor: titleWidthFactor,
-                  child: Text(title,
-                      maxLines: titleMaxLines,
-                      textAlign: titleAlignment,
-                      overflow: textOverflow,
-                      style: titleStyle),
+                  child: Text(
+                    title,
+                    maxLines: titleMaxLines,
+                    textAlign: titleAlignment,
+                    overflow: textOverflow,
+                    style: titleStyle,
+                  ),
                 ),
               ),
               left: 0,
