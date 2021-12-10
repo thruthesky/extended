@@ -1,14 +1,9 @@
 # Extended
 
-- `Extended` is a set of Flutter widgets that are extended based on Material and Cupertino widgets. The some of widgets in this package are simply a copy of an existing widgets in Material and Cupertino widgets with some extra properties.
-For instance, `Column` widget does column things only on Material widget. It does not have background color option, nor tap handler and often we need to add those functionality to `Column` widget. And this is one reason why we have `Extended` package here.
+- A set of handy widgets and functions that are extended based on Material and Cupertino widgets. Some of widgets in this package are simply a copy of an existing widgets in Material and Cupertino widgets with additional properties.
+For instance, `Column` widget does column thing only. It does not have background color, tap handler, and we often need to wrap with additional widgets to have those functionalities on `Column`. This is one reason why we have `Extended` package here. `Extended` package also provide some functions like openning dialogs, downloading & caching files.
 
-- `Extended` package also provide methods to open dialogs like `alert`, `confirm`, etc.
-
-- `Extended` package collects some of the well known widgets in `pub.dev` and bundle them together to make a better UI widget package.
-
-
-
+- `Extended` package depends on some of the best widgets in `pub.dev` to extend its functionalities.
 
 
 ## Features
