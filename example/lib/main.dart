@@ -1,4 +1,3 @@
-
 // import 'package:example/tappable_row.screen.dart';
 import 'package:example/screens/tappable_column.screen.dart';
 import 'package:example/screens/gradient_card.screen.dart';

@@ -1,5 +1,12 @@
 # Change log
 
+## 0.0.6
+
+- Documentation
+- TappableColumn
+- GradientCard
+
+
 ## 0.0.5
 
 - documentation

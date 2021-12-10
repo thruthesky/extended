@@ -25,13 +25,16 @@ class GradientCardScreen extends StatelessWidget {
                 child: image,
                 title: 'Default gradient card.',
                 onTap: () => alert(context, "Gradient Card", "ON TAP"),
-                onLongPress: () => alert(context, "Gradient Card", "ON LONG PRESS"),
-                onDoubleTap: () => alert(context, "Gradient Card", "ON DOUBLE TAP"),
+                onLongPress: () =>
+                    alert(context, "Gradient Card", "ON LONG PRESS"),
+                onDoubleTap: () =>
+                    alert(context, "Gradient Card", "ON DOUBLE TAP"),
               ),
               const Divider(),
               GradientCard(
                 child: const GreenBox(),
-                title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
+                title:
+                    'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
                 titleMaxLines: 2,
                 onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
                 gradientColors: const [Colors.grey, Colors.transparent],
@@ -52,7 +55,8 @@ class GradientCardScreen extends StatelessWidget {
                     left: 10,
                   ),
                   Positioned(
-                    child: Icon(Icons.open_in_new_sharp, color: Colors.redAccent),
+                    child:
+                        Icon(Icons.open_in_new_sharp, color: Colors.redAccent),
                     top: 10,
                     right: 10,
                   ),

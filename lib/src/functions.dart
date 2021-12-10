@@ -7,7 +7,9 @@ Future alert(BuildContext context, String title, String content) {
       title: Text(title),
       content: Text(content),
       actions: [
-        ElevatedButton(onPressed: () => Navigator.pop(context, 'pressed'), child: const Text('ok'))
+        ElevatedButton(
+            onPressed: () => Navigator.pop(context, 'pressed'),
+            child: const Text('ok'))
       ],
     ),
   );
