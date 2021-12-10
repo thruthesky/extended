@@ -75,6 +75,7 @@ build/
 !**/ios/**/default.perspectivev3
 !example/README.md
 !example/lib/main.dart
+!example/lib/screens/**/*.dart
 !example/pubspec.yaml
 example
 example/
