@@ -1,6 +1,5 @@
 import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class TappableColumnScreen extends StatefulWidget {
   const TappableColumnScreen({Key? key}) : super(key: key);

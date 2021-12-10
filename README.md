@@ -32,6 +32,9 @@ For instance, `Column` widget does column things only on Material widget. It doe
 
 - See the example codes and try to open the source file in the paackage. It will surely gives you an idea how the `Extended` widgets are built, and how to use.
 
+
+- All images provided by with URL will be cached with `cached_network_image`.
+
 ## Getting started
 
 Just add the package name and version into your pubspec.yaml
@@ -42,6 +45,12 @@ Just add the package name and version into your pubspec.yaml
 
 - There are some box widget.
 - `RedBox`, `GreenBox`, `BlueBox`
+
+
+
+### GradientCard
+
+
 
 ### TappableRow
 

@@ -1,8 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+/// TODO support for placeHolder, errorWidget of cached netowrk image.
 class GradientCard extends StatelessWidget {
   const GradientCard({
-    required this.image,
+    this.url,
+    this.child,
     required this.title,
     this.onTap,
     this.onLongPress,
@@ -15,8 +18,14 @@ class GradientCard extends StatelessWidget {
     this.gradientColors = const [Colors.black, Colors.transparent],
     this.textOverflow = TextOverflow.fade,
     this.overlays,
+    this.placeholder,
+    this.errorWidget,
     Key? key,
-  }) : super(key: key);
+  })  : assert(url != null || child != null),
+        super(key: key);
+
+  final Widget Function(BuildContext, String)? placeholder;
+  final Widget Function(BuildContext, String, dynamic)? errorWidget;
 
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
@@ -24,7 +33,8 @@ class GradientCard extends StatelessWidget {
 
   final double borderRadius;
 
-  final Widget image;
+  final String? url;
+  final Widget? child;
   final String title;
   final int titleMaxLines;
   final TextStyle titleStyle;
@@ -47,7 +57,13 @@ class GradientCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         child: Stack(
           children: [
-            image,
+            if (child != null) child!,
+            if (url != null)
+              CachedNetworkImage(
+                imageUrl: url!,
+                placeholder: placeholder,
+                errorWidget: errorWidget,
+              ),
             Positioned(
               child: Container(
                 padding: const EdgeInsets.all(8),

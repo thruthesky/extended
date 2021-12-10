@@ -22,7 +22,7 @@ class GradientCardScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               GradientCard(
-                image: image,
+                child: image,
                 title: 'Default gradient card.',
                 onTap: () => alert(context, "Gradient Card", "ON TAP"),
                 onLongPress: () => alert(context, "Gradient Card", "ON LONG PRESS"),
@@ -30,7 +30,7 @@ class GradientCardScreen extends StatelessWidget {
               ),
               const Divider(),
               GradientCard(
-                image: image,
+                child: const GreenBox(),
                 title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
                 titleMaxLines: 2,
                 onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
@@ -38,7 +38,7 @@ class GradientCardScreen extends StatelessWidget {
               ),
               const Divider(),
               GradientCard(
-                image: image,
+                child: image,
                 title:
                     'Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough',
                 titleWidthFactor: 1,
