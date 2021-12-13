@@ -1,5 +1,9 @@
 # Change log
 
+## 0.0.7
+
+- The widget name - `TappableRow` changed to `ExtendedRow`.
+
 ## 0.0.6
 
 - Documentation

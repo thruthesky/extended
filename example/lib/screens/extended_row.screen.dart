@@ -1,25 +1,25 @@
 import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 
-class TappableRowScreen extends StatefulWidget {
-  const TappableRowScreen({Key? key}) : super(key: key);
+class ExtendedRowScreen extends StatefulWidget {
+  const ExtendedRowScreen({Key? key}) : super(key: key);
 
   @override
-  State<TappableRowScreen> createState() => _TappableRowScreenState();
+  State<ExtendedRowScreen> createState() => _ExtendedRowScreenState();
 }
 
-class _TappableRowScreenState extends State<TappableRowScreen> {
+class _ExtendedRowScreenState extends State<ExtendedRowScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TappableRow'),
+        title: const Text('ExtendedRow'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TappableRow(
+            ExtendedRow(
               mainAxisAlignment: MainAxisAlignment.center,
               backgroundColor: Colors.grey,
               children: const [
@@ -31,7 +31,7 @@ class _TappableRowScreenState extends State<TappableRowScreen> {
               onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
               onLongPress: () => alert(context, 'onLongPress', 'long press'),
             ),
-            TappableRow(
+            ExtendedRow(
               width: 240,
               height: 120,
               backgroundColor: Colors.yellow,
@@ -45,7 +45,7 @@ class _TappableRowScreenState extends State<TappableRowScreen> {
               onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
               onLongPress: () => alert(context, 'onLongPress', 'long press'),
             ),
-            TappableRow(
+            ExtendedRow(
               // width: 240,
               height: 150,
               backgroundColor: Colors.black,
@@ -60,7 +60,7 @@ class _TappableRowScreenState extends State<TappableRowScreen> {
               onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
               onLongPress: () => alert(context, 'onLongPress', 'long press'),
             ),
-            TappableRow(
+            ExtendedRow(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               margin: const EdgeInsets.all(16),
               padding: const EdgeInsets.all(16),

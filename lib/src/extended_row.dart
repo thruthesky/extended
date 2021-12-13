@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TappableRow extends StatelessWidget {
-  const TappableRow({
+class ExtendedRow extends StatelessWidget {
+  const ExtendedRow({
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
     this.crossAxisAlignment = CrossAxisAlignment.center,
@@ -31,8 +31,7 @@ class TappableRow extends StatelessWidget {
   final CrossAxisAlignment crossAxisAlignment;
   final TextDirection? textDirection;
   final VerticalDirection verticalDirection;
-  final TextBaseline?
-      textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
+  final TextBaseline? textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
 
   final List<Widget> children;
   final List<int>? flexes;

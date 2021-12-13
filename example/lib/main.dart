@@ -1,6 +1,6 @@
 import 'package:example/screens/tappable_column.screen.dart';
 import 'package:example/screens/gradient_card.screen.dart';
-import 'package:example/screens/tappable_row.screen.dart';
+import 'package:example/screens/extended_row.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -43,9 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (c) => const TappableRowScreen()),
+                MaterialPageRoute(builder: (c) => const ExtendedRowScreen()),
               ),
-              child: const Text('Tappable Row'),
+              child: const Text('ExtendedRow'),
             ),
             ElevatedButton(
               onPressed: () => Navigator.push(
