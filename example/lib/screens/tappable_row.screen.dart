@@ -19,10 +19,17 @@ class _TappableRowScreenState extends State<TappableRowScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const TappableRow(
+            TappableRow(
               mainAxisAlignment: MainAxisAlignment.center,
               backgroundColor: Colors.grey,
-              children: [RedBox(), GreenBox(), BlueBox()],
+              children: const [
+                RedBox(),
+                GreenBox(),
+                BlueBox(),
+              ],
+              onTap: () => alert(context, 'onTap', 'tapped'),
+              onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
+              onLongPress: () => alert(context, 'onLongPress', 'long press'),
             ),
             TappableRow(
               width: 240,
@@ -35,6 +42,8 @@ class _TappableRowScreenState extends State<TappableRowScreen> {
               ],
               flexes: const [1, 2, 3],
               onTap: () => alert(context, 'onTap', 'tapped'),
+              onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
+              onLongPress: () => alert(context, 'onLongPress', 'long press'),
             ),
             TappableRow(
               // width: 240,
@@ -46,6 +55,10 @@ class _TappableRowScreenState extends State<TappableRowScreen> {
                 BlueBox(),
               ],
               flexes: const [3, 2, 1],
+
+              onTap: () => alert(context, 'onTap', 'tapped'),
+              onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
+              onLongPress: () => alert(context, 'onLongPress', 'long press'),
             ),
             TappableRow(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -55,8 +68,12 @@ class _TappableRowScreenState extends State<TappableRowScreen> {
               borderRadius: 16,
               borderWidth: 5.5,
               borderColor: Colors.blueGrey,
-              children: const [RedBox(), GreenBox(), BlueBox()],
-              // flexes: const [1, 2, 3],
+              children: const [
+                RedBox(),
+                GreenBox(),
+                BlueBox(),
+              ],
+              flexes: const [1, 1, 1],
               onTap: () => alert(context, 'onTap', 'tapped'),
               onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
               onLongPress: () => alert(context, 'onLongPress', 'long press'),

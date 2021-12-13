@@ -9,23 +9,6 @@ class TappableColumnScreen extends StatefulWidget {
 }
 
 class _TappableColumnScreenState extends State<TappableColumnScreen> {
-  List<String> colText = ['Column 1', 'Column 2', 'Column 3'];
-
-  onLongPress(int index) {
-    colText[index] = 'On long press';
-    setState(() {});
-  }
-
-  onDoubleTap(int index) {
-    colText[index] = 'On double tap';
-    setState(() {});
-  }
-
-  onTap(int index) {
-    colText[index] = 'On tap';
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,58 +17,51 @@ class _TappableColumnScreenState extends State<TappableColumnScreen> {
       ),
       body: Row(
         children: [
-          Expanded(
-            child: TappableColumn(
-              flexes: const [1, 2, 3, 1],
-              margin: const EdgeInsets.all(16),
-              children: [
-                const RedBox(),
-                const BlueBox(),
-                const YellowBox(),
-                Text(
-                  colText[0],
-                  textAlign: TextAlign.center,
-                ),
-              ],
-              onLongPress: () => onLongPress(0),
-              onDoubleTap: () => onDoubleTap(0),
-              onTap: () => onTap(0),
-            ),
+          TappableColumn(
+            mainAxisAlignment: MainAxisAlignment.start,
+            width: 50,
+            // height: 200,
+            flexes: const [1, 2, 3],
+            margin: const EdgeInsets.all(16),
+            children: const [
+              RedBox(),
+              BlueBox(),
+              YellowBox(),
+            ],
+            onTap: () => alert(context, 'onTap', 'tapped'),
+            onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
+            onLongPress: () => alert(context, 'onLongPress', 'long press'),
           ),
           TappableColumn(
-            mainAxisAlignment: MainAxisAlignment.center,
+            width: 100,
+            mainAxisAlignment: MainAxisAlignment.start,
             padding: const EdgeInsets.all(16),
-            children: [
-              const RedBox(),
-              const BlueBox(),
-              const YellowBox(),
-              Text(
-                colText[1],
-                textAlign: TextAlign.center,
-              ),
+            children: const [
+              RedBox(),
+              BlueBox(),
+              YellowBox(),
             ],
-            onLongPress: () => onLongPress(1),
-            onDoubleTap: () => onDoubleTap(1),
-            onTap: () => onTap(1),
+            onTap: () => alert(context, 'onTap', 'tapped'),
+            onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
+            onLongPress: () => alert(context, 'onLongPress', 'long press'),
           ),
-          Expanded(
-            child: TappableColumn(
-              mainAxisAlignment: MainAxisAlignment.end,
-              padding: const EdgeInsets.all(16),
-              backgroundColor: Colors.grey,
-              children: [
-                Text(
-                  colText[2],
-                  textAlign: TextAlign.center,
-                ),
-                const RedBox(),
-                const BlueBox(),
-                const YellowBox(),
-              ],
-              onLongPress: () => onLongPress(2),
-              onDoubleTap: () => onDoubleTap(2),
-              onTap: () => onTap(2),
-            ),
+          TappableColumn(
+            mainAxisAlignment: MainAxisAlignment.start,
+            margin: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
+            backgroundColor: Colors.black,
+            borderRadius: 16,
+            borderWidth: 5.5,
+            borderColor: Colors.blueGrey,
+            children: const [
+              RedBox(),
+              BlueBox(),
+              YellowBox(),
+            ],
+            flexes: const [1, 1, 1],
+            onTap: () => alert(context, 'onTap', 'tapped'),
+            onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
+            onLongPress: () => alert(context, 'onLongPress', 'long press'),
           ),
         ],
       ),
