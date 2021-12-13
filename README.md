@@ -68,7 +68,7 @@ TappableRow(
 
 - `TappableColumn` also have other option you can customize.
 
-- requred
+- required
 
   - children
 
@@ -79,7 +79,7 @@ TappableRow(
   - crossAxisAlignment = CrossAxisAlignment.center,
   - textDirection,
   - verticalDirection = VerticalDirection.down,
-  - textBaseline, // NO DEFAULT: we don't know what the text's baseline should be
+  - textBaseline,
   - width,
   - height,
   - padding,
