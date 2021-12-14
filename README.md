@@ -174,7 +174,7 @@ GradientCard(
 
 - The purpose of this widget is to display an icon on top and a text at bottom.
 
-![IconTextButton](icon_text_button.jpg)
+![IconTextButton](https://github.com/thruthesky/extended/raw/main/res/icon_text_button.jpg)
 
 ```dart
 IconTextButton(
