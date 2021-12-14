@@ -48,6 +48,13 @@ class GradientCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget? _child = child;
+    _child ??= CachedNetworkImage(
+      imageUrl: url!,
+      placeholder: placeholder,
+      errorWidget: errorWidget,
+    );
+
     return GestureDetector(
       onTap: onTap,
       onLongPress: onLongPress,
@@ -57,13 +64,14 @@ class GradientCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         child: Stack(
           children: [
-            if (child != null) child!,
-            if (url != null)
-              CachedNetworkImage(
-                imageUrl: url!,
-                placeholder: placeholder,
-                errorWidget: errorWidget,
-              ),
+            // if (child != null) child!,
+            // if (url != null)
+            //   CachedNetworkImage(
+            //     imageUrl: url!,
+            //     placeholder: placeholder,
+            //     errorWidget: errorWidget,
+            //   ),
+            _child,
             Positioned(
               child: Container(
                 padding: const EdgeInsets.all(8),

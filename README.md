@@ -140,6 +140,10 @@ TappableColumn(
   - placeholder - this will be used if `url` is provided.
   - errorWidget - this will be used if `url` is provided.
 
+* NOTE:
+  - it will use the `child` widget if both `child` and `url` properties are given a value.
+  - if both `child` and `url` is omitted, it will throw an assert error.
+
 ![Gradient Card](https://github.com/thruthesky/extended/raw/main/res/gradient_card.png)
 
 ```dart
