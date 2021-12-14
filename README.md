@@ -140,7 +140,7 @@ TappableColumn(
   - placeholder - this will be used if `url` is provided.
   - errorWidget - this will be used if `url` is provided.
 
-![Gradient Card](https://github.com/thruthesky/extended/raw/main/res/gradient_card.png)
+![Gradient Card](https://github.com/thruthesky/extended/raw/main/res/gradient_cord.png)
 
 ```dart
 GradientCard(
