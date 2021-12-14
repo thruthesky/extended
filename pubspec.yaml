@@ -1,6 +1,6 @@
 name: extended
 description: A set of handy widgets and functions that are extended based on Material and Cupertino widgets.
-version: 0.0.7
+version: 0.0.8
 homepage: https://github.com/thruthesky/extended
 
 environment:

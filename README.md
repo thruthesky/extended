@@ -169,6 +169,31 @@ GradientCard(
 );
 ```
 
+
+### IconTextButton
+
+- The purpose of this widget is to display an icon on top and a text at bottom.
+
+![IconTextButton](icon_text_button.jpg)
+
+```dart
+IconTextButton(
+  icon: FaDuotoneIcon(
+    FontAwesomeIcons.duotoneUsers,
+    primaryColor: Colors.red,
+    secondaryColor: Colors.grey,
+    size: 32,
+  ),
+  text: Text(
+    'Residents',
+    style: TextStyle(color: Colors.black, fontSize: 10),
+  ),
+  spacing: 4,
+  onTap: () => service.open(RouteNames.residents),
+),
+```
+
+
 ## Additional information
 
 TODO: Tell users more about the package: where to find more information, how to

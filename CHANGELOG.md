@@ -1,5 +1,10 @@
 # Change log
 
+## 0.0.8
+
+- Add `IconTextButton`.
+- Change name `TappbleColumn` to `ExtendedColumn`.
+
 ## 0.0.7
 
 - The widget name - `TappableRow` changed to `ExtendedRow`.
