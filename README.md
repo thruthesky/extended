@@ -121,24 +121,24 @@ TappableColumn(
 - `Gradient Card` can be costumized with the following options:
 
 * required
- - title - String
+  - title - String
 
 * optional
- - url - Image URL
- - child - must be a type of Widget
- - onTap - function to execute when the card is tapped.
- - onLongPress - function to execute when the card is long pressed.
- - onDoubleTap function to execute when the card is double tapped.
- - titleStyle = default: TextStyle(color: Colors.white),
- - titleMaxLines = default: 1
- - borderRadius - default: 8.0,
- - titleWidthFactor - default: 0.7
- - titleAlignment - title alignment, default: TextAlign.center.
- - gradientColors - Title background color, default: [Colors.black, Colors.transparent].
- - textOverflow - type of overflow for long title text, default: TextOverflow.fade.
- - overlays - additional positioned overlays.
- - placeholder - this will be used if `url` is provided.
- - errorWidget - this will be used if `url` is provided.
+  - url - Image URL
+  - child - must be a type of Widget
+  - onTap - function to execute when the card is tapped.
+  - onLongPress - function to execute when the card is long pressed.
+  - onDoubleTap function to execute when the card is double tapped.
+  - titleStyle = default: TextStyle(color: Colors.white),
+  - titleMaxLines = default: 1
+  - borderRadius - default: 8.0,
+  - titleWidthFactor - default: 0.7
+  - titleAlignment - title alignment, default: TextAlign.center.
+  - gradientColors - Title background color, default: [Colors.black, Colors.transparent].
+  - textOverflow - type of overflow for long title text, default: TextOverflow.fade.
+  - overlays - additional positioned overlays.
+  - placeholder - this will be used if `url` is provided.
+  - errorWidget - this will be used if `url` is provided.
 
 ![Gradient Card](https://github.com/thruthesky/extended/raw/main/res/gradient_card.png)
 
