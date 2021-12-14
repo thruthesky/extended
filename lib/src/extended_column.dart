@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TappableColumn extends StatelessWidget {
-  const TappableColumn({
+class ExtendedColumn extends StatelessWidget {
+  const ExtendedColumn({
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.mainAxisSize = MainAxisSize.max,
     this.crossAxisAlignment = CrossAxisAlignment.center,
@@ -13,7 +13,7 @@ class TappableColumn extends StatelessWidget {
     this.padding,
     this.margin,
     this.backgroundColor,
-    this.borderColor = const Color(0xFFaaaaaa),
+    this.borderColor = const Color(0xFFFFFFFF),
     this.borderRadius = 0.0,
     this.borderWidth = 0.0,
     this.onTap,
@@ -31,8 +31,7 @@ class TappableColumn extends StatelessWidget {
   final CrossAxisAlignment crossAxisAlignment;
   final TextDirection? textDirection;
   final VerticalDirection verticalDirection;
-  final TextBaseline?
-      textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
+  final TextBaseline? textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
 
   final List<Widget> children;
   final List<int>? flexes;

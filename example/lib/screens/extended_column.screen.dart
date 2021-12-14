@@ -1,14 +1,14 @@
 import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 
-class TappableColumnScreen extends StatefulWidget {
-  const TappableColumnScreen({Key? key}) : super(key: key);
+class ExtendedColumnScreen extends StatefulWidget {
+  const ExtendedColumnScreen({Key? key}) : super(key: key);
 
   @override
-  _TappableColumnScreenState createState() => _TappableColumnScreenState();
+  _ExtendedColumnScreenState createState() => _ExtendedColumnScreenState();
 }
 
-class _TappableColumnScreenState extends State<TappableColumnScreen> {
+class _ExtendedColumnScreenState extends State<ExtendedColumnScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class _TappableColumnScreenState extends State<TappableColumnScreen> {
       ),
       body: Row(
         children: [
-          TappableColumn(
+          ExtendedColumn(
             mainAxisAlignment: MainAxisAlignment.start,
             width: 50,
             // height: 200,
@@ -32,7 +32,7 @@ class _TappableColumnScreenState extends State<TappableColumnScreen> {
             onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
             onLongPress: () => alert(context, 'onLongPress', 'long press'),
           ),
-          TappableColumn(
+          ExtendedColumn(
             width: 100,
             mainAxisAlignment: MainAxisAlignment.start,
             padding: const EdgeInsets.all(16),
@@ -45,7 +45,7 @@ class _TappableColumnScreenState extends State<TappableColumnScreen> {
             onDoubleTap: () => alert(context, 'onDoubleTap', 'double tapped'),
             onLongPress: () => alert(context, 'onLongPress', 'long press'),
           ),
-          TappableColumn(
+          ExtendedColumn(
             mainAxisAlignment: MainAxisAlignment.start,
             margin: const EdgeInsets.all(16),
             padding: const EdgeInsets.all(16),
