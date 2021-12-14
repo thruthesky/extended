@@ -21,25 +21,19 @@ class GradientCardScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              const SizedBox(height: 20),
+              const Text('Default'),
+              const SizedBox(height: 4),
               GradientCard(
                 child: image,
                 title: 'Default gradient card.',
                 onTap: () => alert(context, "Gradient Card", "ON TAP"),
-                onLongPress: () =>
-                    alert(context, "Gradient Card", "ON LONG PRESS"),
-                onDoubleTap: () =>
-                    alert(context, "Gradient Card", "ON DOUBLE TAP"),
+                onLongPress: () => alert(context, "Gradient Card", "ON LONG PRESS"),
+                onDoubleTap: () => alert(context, "Gradient Card", "ON DOUBLE TAP"),
               ),
-              const Divider(),
-              GradientCard(
-                child: const GreenBox(),
-                title:
-                    'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
-                titleMaxLines: 2,
-                onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
-                gradientColors: const [Colors.grey, Colors.transparent],
-              ),
-              const Divider(),
+              const Divider(thickness: 1),
+              const Text('With grey title background and additional overlays.'),
+              const SizedBox(height: 4),
               GradientCard(
                 child: image,
                 title:
@@ -55,12 +49,21 @@ class GradientCardScreen extends StatelessWidget {
                     left: 10,
                   ),
                   Positioned(
-                    child:
-                        Icon(Icons.open_in_new_sharp, color: Colors.redAccent),
+                    child: Icon(Icons.open_in_new_sharp, color: Colors.redAccent),
                     top: 10,
                     right: 10,
                   ),
                 ],
+              ),
+              const Divider(thickness: 1),
+              const Text('With grey title background and green box as child.'),
+              const SizedBox(height: 4),
+              GradientCard(
+                child: const GreenBox(height: 200, width: 200),
+                title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
+                titleMaxLines: 2,
+                onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
+                gradientColors: const [Colors.grey, Colors.transparent],
               ),
             ],
           ),
