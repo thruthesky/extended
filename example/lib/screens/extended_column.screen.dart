@@ -13,7 +13,7 @@ class _ExtendedColumnScreenState extends State<ExtendedColumnScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Enhanced'),
+        title: const Text('ExtendedColumn'),
       ),
       body: Row(
         children: [

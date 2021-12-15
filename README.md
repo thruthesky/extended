@@ -41,15 +41,15 @@ Just add the package name and version into your pubspec.yaml
 
 ### GradientCard
 
-### TappableRow
+### ExtendedRow
 
-- `TappableRow` has flex option.
-  - `TappableRow(children: [ RedBox(), GreenBox(), BlueBox() ], flexes: [1,2,3])`
+- `ExtendedRow` has flex option.
+  - `ExtendedRow(children: [ RedBox(), GreenBox(), BlueBox() ], flexes: [1,2,3])`
 
-![Tappable Row](https://github.com/thruthesky/extended/raw/main/res/tappable_row.jpg)
+![Extended Row](https://github.com/thruthesky/extended/raw/main/res/tappable_row.jpg)
 
 ```dart
-TappableRow(
+ExtendedRow(
   mainAxisAlignment: MainAxisAlignment.spaceAround,
   margin: const EdgeInsets.all(16),
   padding: const EdgeInsets.all(16),
@@ -64,9 +64,9 @@ TappableRow(
 ),
 ```
 
-### TappableColumn
+### ExtendedColumn
 
-- `TappableColumn` also have other option you can customize.
+- `ExtendedColumn` also have other option you can customize.
 
 - required
 
@@ -93,10 +93,10 @@ TappableRow(
   - onDoubleTap,
   - flexes,
 
-![Tappable Column](https://github.com/thruthesky/extended/raw/main/res/tappable_column.png)
+![Extended Column](https://github.com/thruthesky/extended/raw/main/res/tappable_column.png)
 
 ```dart
-TappableColumn(
+ExtendedColumn(
   mainAxisAlignment: MainAxisAlignment.start,
   margin: const EdgeInsets.all(16),
   padding: const EdgeInsets.all(16),
@@ -121,9 +121,11 @@ TappableColumn(
 - `Gradient Card` can be costumized with the following options:
 
 * required
+
   - title - String
 
 * optional
+
   - url - Image URL.
   - child - must be a type of `Widget`.
   - onTap - function to execute when the card is tapped.
@@ -169,7 +171,6 @@ GradientCard(
 );
 ```
 
-
 ### IconTextButton
 
 - The purpose of this widget is to display an icon on top and a text at bottom.
@@ -192,7 +193,6 @@ IconTextButton(
   onTap: () => service.open(RouteNames.residents),
 ),
 ```
-
 
 ## Additional information
 
