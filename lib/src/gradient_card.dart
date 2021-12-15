@@ -20,6 +20,9 @@ class GradientCard extends StatelessWidget {
     this.overlays,
     this.placeholder,
     this.errorWidget,
+    this.height,
+    this.width,
+    this.fit = BoxFit.cover,
     Key? key,
   })  : assert(url != null || child != null),
         super(key: key);
@@ -46,11 +49,18 @@ class GradientCard extends StatelessWidget {
 
   final List<Positioned>? overlays;
 
+  final double? height;
+  final double? width;
+  final BoxFit fit;
+
   @override
   Widget build(BuildContext context) {
     Widget? _child = child;
     _child ??= CachedNetworkImage(
       imageUrl: url!,
+      fit: fit,
+      width: width,
+      height: height,
       placeholder: placeholder,
       errorWidget: errorWidget,
     );
@@ -63,14 +73,8 @@ class GradientCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(borderRadius),
         child: Stack(
+          alignment: Alignment.center,
           children: [
-            // if (child != null) child!,
-            // if (url != null)
-            //   CachedNetworkImage(
-            //     imageUrl: url!,
-            //     placeholder: placeholder,
-            //     errorWidget: errorWidget,
-            //   ),
             _child,
             Positioned(
               child: Container(
