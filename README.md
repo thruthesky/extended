@@ -1,9 +1,17 @@
 # Extended
 
-- A set of handy widgets and functions that are extended based on Material and Cupertino widgets. Some of widgets in this package are simply a copy of an existing widgets in Material and Cupertino widgets with additional properties.
-  For instance, `Column` widget does column thing only. It does not have background color, tap handler, and we often need to wrap with additional widgets to have those functionalities on `Column`. This is one reason why we have `Extended` package here. `Extended` package also provide some functions like openning dialogs, downloading & caching files.
+- A set of handy widgets and functions that are extended based on Material and Cupertino widgets.
+  - Some of widgets in this package are simply a copy of an existing widgets with some additional properties.
+  For instance, `Column` widget does column thing only. It does not have background color, tap handler, margin, padding, etc. And we often need to wrap `Coulmn` with additional widgets to have those functionalities on it. This is one reason why we have `Extended` package here.
+
+- `Extended` package also provide some functions like openning dialogs, downloading, caching files and other helper functions.
 
 - `Extended` package depends on some of the best widgets in `pub.dev` to extend its functionalities.
+
+
+## Requirements
+
+- `Extended` uses `Get` package as its dependency that means, the app must use `GetMaterialApp` (not `MaterialApp`).
 
 ## Features
 

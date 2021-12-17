@@ -27,9 +27,9 @@ class GradientCardScreen extends StatelessWidget {
               GradientCard(
                 child: image,
                 title: 'Default gradient card.',
-                onTap: () => alert(context, "Gradient Card", "ON TAP"),
-                onLongPress: () => alert(context, "Gradient Card", "ON LONG PRESS"),
-                onDoubleTap: () => alert(context, "Gradient Card", "ON DOUBLE TAP"),
+                onTap: () => alert("Gradient Card", "ON TAP"),
+                onLongPress: () => alert("Gradient Card", "ON LONG PRESS"),
+                onDoubleTap: () => alert("Gradient Card", "ON DOUBLE TAP"),
               ),
               const Divider(thickness: 1),
               const Text('With grey title background and additional overlays.'),
@@ -40,7 +40,7 @@ class GradientCardScreen extends StatelessWidget {
                     'Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough',
                 titleWidthFactor: 1,
                 titleMaxLines: 2,
-                onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
+                onTap: () => alert('Gradient Card', "Card Tapped!"),
                 gradientColors: const [Colors.grey, Colors.transparent],
                 overlays: const [
                   Positioned(
@@ -62,7 +62,7 @@ class GradientCardScreen extends StatelessWidget {
                 child: const GreenBox(height: 200, width: 200),
                 title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
                 titleMaxLines: 2,
-                onTap: () => alert(context, 'Gradient Card', "Card Tapped!"),
+                onTap: () => alert('Gradient Card', "Card Tapped!"),
                 gradientColors: const [Colors.grey, Colors.transparent],
               ),
               const Divider(thickness: 1),
@@ -70,7 +70,8 @@ class GradientCardScreen extends StatelessWidget {
               const SizedBox(height: 4),
               const GradientCard(
                 child: GreenBox(height: 200, width: 200),
-                url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/220px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+                url:
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/220px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
                 title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
                 titleMaxLines: 2,
               ),

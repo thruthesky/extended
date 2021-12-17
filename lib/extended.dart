@@ -1,10 +1,12 @@
-export 'src/extended_column.dart';
-export 'src/extended_row.dart';
-export 'src/gradient_card.dart';
-export 'src/box/red_box.dart';
-export 'src/box/green_box.dart';
-export 'src/box/blue_box.dart';
-export 'src/box/yellow_box.dart';
-export 'src/icon_text_button.dart';
+export 'src/widgets/extended_column.dart';
+export 'src/widgets/extended_row.dart';
+export 'src/widgets/gradient_card.dart';
+export 'src/widgets/box/box.dart';
+export 'src/widgets/box/red_box.dart';
+export 'src/widgets/box/green_box.dart';
+export 'src/widgets/box/blue_box.dart';
+export 'src/widgets/box/yellow_box.dart';
+export 'src/widgets/icon_text_button.dart';
 
-export 'src/functions.dart';
+export 'src/functions/alert.dart';
+export 'src/functions/error.dart';
