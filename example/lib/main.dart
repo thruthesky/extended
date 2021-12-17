@@ -1,3 +1,4 @@
+import 'package:example/screens/download_screen.dart';
 import 'package:example/screens/extended_column.screen.dart';
 import 'package:example/screens/gradient_card.screen.dart';
 import 'package:example/screens/extended_row.screen.dart';
@@ -60,6 +61,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 MaterialPageRoute(builder: (c) => const GradientCardScreen()),
               ),
               child: const Text('Gradient Card'),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (c) => const DownloadScreen()),
+              ),
+              child: const Text('Download'),
             ),
           ],
         ),

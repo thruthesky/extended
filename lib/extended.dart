@@ -10,3 +10,7 @@ export 'src/widgets/icon_text_button.dart';
 
 export 'src/functions/alert.dart';
 export 'src/functions/error.dart';
+export 'src/functions/confirm.dart';
+
+export 'src/functions/get_arg.dart';
+export 'src/functions/download.dart';
