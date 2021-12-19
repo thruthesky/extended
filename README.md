@@ -202,12 +202,9 @@ IconTextButton(
 ),
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### ExtendedContainer
 
-## TODO list
-
--
+- It extends the Material `Container` widget that means you can use all the existing properties of the `Container` widget.
+- It supports the following options
+  - `onTap`
