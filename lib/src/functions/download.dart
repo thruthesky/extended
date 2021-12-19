@@ -78,14 +78,14 @@ Future<String> download(
   }
   String pathToSave = dirPath + '/' + filename;
 
-  print('download: $pathToSave');
+  // print('download: $pathToSave');
 
   /// Check if file exists,
   File file = File(pathToSave);
   bool re = file.existsSync();
 
   if (re) {
-    print('---- yes, file exists');
+    // print('---- yes, file exists');
     // Yes, file exists. Then, check if the file is older than expiration
     DateTime now = DateTime.now();
     DateTime lastModifiedDateTime = file.lastModifiedSync();
@@ -93,7 +93,7 @@ Future<String> download(
 
     // The downloaded file has already expired?
     if (expire.compareTo(now) < 0) {
-      print('---- yes, downloaded file is expired');
+      // print('---- yes, downloaded file is expired');
       await _downloadUrl(url, pathToSave,
           onDownloadBegin: onDownloadBegin,
           onDownloadEnd: onDownloadEnd,
@@ -101,7 +101,7 @@ Future<String> download(
     }
   } else {
     // No, file not exists. Download.
-    print('---- No, file not exists. Download.');
+    // print('---- No, file not exists. Download.');
     await _downloadUrl(url, pathToSave,
         onDownloadBegin: onDownloadBegin,
         onDownloadEnd: onDownloadEnd,
@@ -128,7 +128,7 @@ _downloadUrl(
   Function? onDownloadEnd,
   Function? onDownloadProgress,
 }) async {
-  print('---- download begins ---- _downloadUrl()');
+  // print('---- download begins ---- _downloadUrl()');
   if (onDownloadBegin != null) onDownloadBegin();
   Dio dio = Dio();
   final response = await dio.get(
@@ -186,11 +186,13 @@ String safeFilename(
   final RegExp onlyAlphanumericRegex = RegExp(r'''[^a-zA-Z0-9\s.]''');
 
   String returnString = filename;
-  onlyAlphanumeric
-      ? returnString = returnString.replaceAll(onlyAlphanumericRegex, '')
-      : reservedCharacters.forEach((c) {
-          returnString = returnString.replaceAll(c, separator);
-        });
+  if (onlyAlphanumeric) {
+    returnString = returnString.replaceAll(onlyAlphanumericRegex, '');
+  } else {
+    for (var c in reservedCharacters) {
+      returnString = returnString.replaceAll(c, separator);
+    }
+  }
   if (!withSpaces) returnString = returnString.replaceAll(' ', separator);
   return lowercase ? returnString.toLowerCase() : returnString;
 }

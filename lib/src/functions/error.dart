@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 /// This handles all kinds of error. Just call this method with error object and
 /// it will display error message nicely.
 error(e) {
-  print('functions/error.dart > error happened: $e');
+  // print('functions/error.dart > error happened: $e');
 
   // If the error message is a string, then display the string.
   if (e is String) {

@@ -16,11 +16,11 @@ Future<bool> confirm(String title, String content) async {
         actions: [
           TextButton(
             onPressed: () => Get.back(result: true),
-            child: Text('Yes'),
+            child: const Text('Yes'),
           ),
           TextButton(
             onPressed: () => Get.back(result: false),
-            child: Text('No'),
+            child: const Text('No'),
           )
         ],
       );
