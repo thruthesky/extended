@@ -13,6 +13,15 @@
 
 - `Extended` uses `Get` package as its dependency that means, the app must use `GetMaterialApp` (not `MaterialApp`).
 
+
+
+## Coding Guideline
+
+### Naming
+
+- Widgets that extends existing Material widgets begin with `Extended`. For instnace `ExtendedColumn`. These widgets are called `extended widgets`. Most extended widgets support its orignal widget's properties.
+- Widgets that works similiar to exising Material widgets but completely rebuilt and work differently are called `copy widget` and those also begin with `Extended`. For instance, `ExtendedListTile`. The original `ListTile` has some constraints about sizing `leading` and `trailing` options and `ExtendedListTile` has no limitaion on those propertiles. But copy widgets may not support all the properties of original widget. 
+
 ## Features
 
 ### Common properties
@@ -23,14 +32,15 @@
   - backgroundColor,
   - borderColor,
   - borderRadius,
+  - borederWidth,
   - margin,
   - padding,
   - size,
   - width,
   - height,
-  - tap,
-  - long press,
-  - double tap
+  - onTap,
+  - onLongPress,
+  - onDoubleTap
 
 - See the example codes and try to open the source file in the paackage. It will surely gives you an idea how the `Extended` widgets are built, and how to use.
 

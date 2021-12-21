@@ -12,7 +12,7 @@ class ExtendedColumn extends StatelessWidget {
     this.height,
     this.padding,
     this.margin,
-    this.backgroundColor,
+    this.color,
     this.borderColor = const Color(0xFFFFFFFF),
     this.borderRadius = 0.0,
     this.borderWidth = 0.0,
@@ -39,7 +39,7 @@ class ExtendedColumn extends StatelessWidget {
   final double? height;
   final EdgeInsets? padding;
   final EdgeInsets? margin;
-  final Color? backgroundColor;
+  final Color? color;
   final void Function()? onTap;
   final void Function()? onLongPress;
   final void Function()? onDoubleTap;
@@ -60,7 +60,7 @@ class ExtendedColumn extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: color,
         border: Border.all(
           color: borderColor,
           width: borderWidth,

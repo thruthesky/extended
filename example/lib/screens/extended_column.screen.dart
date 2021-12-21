@@ -49,7 +49,7 @@ class _ExtendedColumnScreenState extends State<ExtendedColumnScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             margin: const EdgeInsets.all(16),
             padding: const EdgeInsets.all(16),
-            backgroundColor: Colors.black,
+            color: Colors.black,
             borderRadius: 16,
             borderWidth: 5.5,
             borderColor: Colors.blueGrey,
