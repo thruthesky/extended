@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// This widget gives more flexible options on leading sizes and margin, paddings.
 class ExtendedListTile extends StatelessWidget {
   const ExtendedListTile({
-    required this.leading,
+    this.leading,
     required this.title,
     required this.subtitle,
     this.spacing = 12,
@@ -22,7 +22,7 @@ class ExtendedListTile extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final Widget leading;
+  final Widget? leading;
   final Widget title;
   final Widget subtitle;
   final double spacing;
@@ -64,8 +64,10 @@ class ExtendedListTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            leading,
-            SizedBox(width: spacing),
+            if (leading != null) ...[
+              leading!,
+              SizedBox(width: spacing),
+            ],
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
