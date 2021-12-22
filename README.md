@@ -134,6 +134,23 @@ ExtendedColumn(
 ),
 ```
 
+### ExtendedListTile
+
+- `ExtendedListTile` is a copy widget. It works similar to `ListTile` but does not supprot all the properties.
+
+```dart
+ExtendedListTile(
+  padding: const EdgeInsets.symmetric(horizontal: sm, vertical: xxs),
+  leading: Image( ... ),
+  title: Text( '...' ),
+  subtitle: ExtendedColumn(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [ .. ],
+  ),
+  onTap: () => {},
+),
+```
+
 ### Gradient Card
 
 - `Gradient Card` can be costumized with the following options:
