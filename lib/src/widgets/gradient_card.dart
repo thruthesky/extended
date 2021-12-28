@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-/// TODO support for placeHolder, errorWidget of cached netowrk image.
 class GradientCard extends StatelessWidget {
   const GradientCard({
     this.url,

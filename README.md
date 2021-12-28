@@ -235,3 +235,29 @@ IconTextButton(
 - It extends the Material `Container` widget that means you can use all the existing properties of the `Container` widget.
 - It supports the following options
   - `onTap`
+
+
+
+
+### PagePadding
+
+
+### Spinner
+
+### Avatar
+
+### CachedImage
+
+### ShareButton
+
+### FutureShareButton
+
+### TextChip
+
+
+### TextTap
+
+
+### Input
+
+
