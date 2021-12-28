@@ -22,7 +22,7 @@ class Spinner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (loading == false) return SizedBox.shrink();
+    if (loading == false) return const SizedBox.shrink();
     Widget spinner = SizedBox(
       width: size,
       height: size,
@@ -30,7 +30,7 @@ class Spinner extends StatelessWidget {
           ? CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(valueColor),
             )
-          : CupertinoActivityIndicator(),
+          : const CupertinoActivityIndicator(),
     );
 
     if (padding != null) {

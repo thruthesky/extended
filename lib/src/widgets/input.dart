@@ -124,7 +124,7 @@ class _InputState extends State<Input> {
         ),
         if (_loader)
           Positioned(
-            child: CircularProgressIndicator.adaptive(),
+            child: const CircularProgressIndicator.adaptive(),
             right: widget.loaderRight,
             top: widget.loaderTop,
           ),

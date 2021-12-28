@@ -36,7 +36,7 @@ class Avatar extends StatelessWidget {
         child: child,
       ),
       constraints: BoxConstraints(minWidth: size, minHeight: size, maxWidth: size, maxHeight: size),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,
         // boxShadow: [
