@@ -13,7 +13,7 @@ class ExtendedRow extends StatelessWidget {
     this.padding,
     this.margin,
     this.backgroundColor,
-    this.borderColor = const Color(0xFFaaaaaa),
+    this.borderColor = const Color(0xFFFFFFFF),
     this.borderRadius = 0.0,
     this.borderWidth = 0.0,
     this.onTap,
