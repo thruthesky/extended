@@ -28,14 +28,16 @@ class Button extends StatelessWidget {
       child: Container(
         margin: padding,
         padding: padding,
-        decoration:
-            BoxDecoration(color: backgroundColor, borderRadius: BorderRadius.circular(radius)),
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(radius),
+        ),
         child: text != null
             ? Text(
                 text!,
                 style: TextStyle(color: color),
               )
-            : (child != null ? child : SizedBox.shrink()),
+            : (child ?? const SizedBox.shrink()),
       ),
       behavior: HitTestBehavior.opaque,
     );

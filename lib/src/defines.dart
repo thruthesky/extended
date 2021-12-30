@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 typedef StringCallback = void Function(String);
 
 const Color white = Colors.white;
-final Color light = Colors.grey[200]!;
-final Color lighter = Colors.grey[100]!;
+final Color light = Colors.grey[300]!;
+final Color lighter = Colors.grey[200]!;
 final Color dark = Colors.grey[700]!;
 const Color blue = Colors.blue;
 const Color green = Colors.green;
