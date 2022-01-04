@@ -43,50 +43,56 @@ class ExtendedListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      onDoubleTap: onDoubleTap,
-      onLongPress: onLongPress,
-      behavior: HitTestBehavior.opaque,
-      child: Container(
-        margin: margin,
-        padding: padding,
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          color: color,
-          border: Border.all(
-            color: borderColor,
-            width: borderWidth,
-            style: BorderStyle.solid,
-          ),
-          borderRadius: BorderRadius.circular(borderRadius),
+    final child = Container(
+      margin: margin,
+      padding: padding,
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: color,
+        border: Border.all(
+          color: borderColor,
+          width: borderWidth,
+          style: BorderStyle.solid,
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            if (leading != null) ...[
-              leading!,
-              SizedBox(width: spacing),
-            ],
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (title != null) title!,
-                  if (subtitle != null) subtitle!,
-                ],
-              ),
-            ),
-            if (trailing != null) ...[
-              SizedBox(width: spacing),
-              trailing!,
-            ],
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          if (leading != null) ...[
+            leading!,
+            SizedBox(width: spacing),
           ],
-        ),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (title != null) title!,
+                if (subtitle != null) subtitle!,
+              ],
+            ),
+          ),
+          if (trailing != null) ...[
+            SizedBox(width: spacing),
+            trailing!,
+          ],
+        ],
       ),
     );
+
+    if (onTap != null || onDoubleTap != null || onLongPress != null) {
+      return GestureDetector(
+        onTap: onTap,
+        onDoubleTap: onDoubleTap,
+        onLongPress: onLongPress,
+        behavior: HitTestBehavior.opaque,
+        child: child,
+      );
+    } else {
+      return child;
+    }
   }
 }
