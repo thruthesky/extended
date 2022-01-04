@@ -1,5 +1,8 @@
 # Change log
 
+## 0.1.0
+
+- Add `TipBox`.
 ## 0.0.9
 
 - Add `ExtendedListTile`.
