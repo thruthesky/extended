@@ -4,6 +4,7 @@ export 'src/widgets/extended_container.dart';
 export 'src/widgets/extended_column.dart';
 export 'src/widgets/extended_row.dart';
 export 'src/widgets/extended_list_tile.dart';
+export 'src/widgets/tip_box.dart';
 export 'src/widgets/gradient_card.dart';
 export 'src/widgets/icon_text_button.dart';
 export 'src/widgets/spinner.dart';

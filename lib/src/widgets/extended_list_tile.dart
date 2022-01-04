@@ -64,7 +64,7 @@ class ExtendedListTile extends StatelessWidget {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             if (leading != null) ...[
               leading!,
