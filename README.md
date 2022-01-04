@@ -135,7 +135,7 @@ ExtendedColumn(
 
 ### ExtendedListTile
 
-![Extended Column](https://github.com/thruthesky/extended/raw/main/res/img/tip_box.jpg)
+![Extended Column](https://github.com/thruthesky/extended/raw/main/res/tappable_column.png)
 
 - `ExtendedListTile` is a copy widget from `ListTile`. It works similar to `ListTile` but does not supprot all the properties.
 
@@ -153,6 +153,10 @@ ExtendedListTile(
 ```
 
 ### TipBox
+
+
+![Extended Column](https://github.com/thruthesky/extended/raw/main/res/img/tip_box.jpg)
+
 
 - `TipBox` is a variant of `ExtendedListTile`. It simply wraps `ExtendedListTile` with some default options to make it look as what `TipBox` is. See the source code of `TipBox` to understand what it does.
 
