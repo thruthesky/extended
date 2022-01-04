@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 class ExtendedListTile extends StatelessWidget {
   const ExtendedListTile({
     this.leading,
-    required this.title,
-    required this.subtitle,
+    this.trailing,
+    this.title,
+    this.subtitle,
     this.spacing = 12,
     this.onTap,
     this.onDoubleTap,
@@ -23,8 +24,9 @@ class ExtendedListTile extends StatelessWidget {
   }) : super(key: key);
 
   final Widget? leading;
-  final Widget title;
-  final Widget subtitle;
+  final Widget? trailing;
+  final Widget? title;
+  final Widget? subtitle;
   final double spacing;
   final VoidCallback? onTap;
   final VoidCallback? onDoubleTap;
@@ -73,11 +75,15 @@ class ExtendedListTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  title,
-                  subtitle,
+                  if (title != null) title!,
+                  if (subtitle != null) subtitle!,
                 ],
               ),
             ),
+            if (trailing != null) ...[
+              SizedBox(width: spacing),
+              trailing!,
+            ],
           ],
         ),
       ),

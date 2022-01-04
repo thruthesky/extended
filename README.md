@@ -57,7 +57,6 @@ Just add the package name and version into your pubspec.yaml
 - There are some box widget.
 - `RedBox`, `GreenBox`, `BlueBox`
 
-### GradientCard
 
 ### ExtendedRow
 
@@ -136,7 +135,7 @@ ExtendedColumn(
 
 ### ExtendedListTile
 
-- `ExtendedListTile` is a copy widget. It works similar to `ListTile` but does not supprot all the properties.
+- `ExtendedListTile` is a copy widget from `ListTile`. It works similar to `ListTile` but does not supprot all the properties.
 
 ```dart
 ExtendedListTile(
@@ -151,7 +150,7 @@ ExtendedListTile(
 ),
 ```
 
-### Gradient Card
+### GradientCard
 
 - `Gradient Card` can be costumized with the following options:
 
@@ -205,6 +204,19 @@ GradientCard(
   ],
 );
 ```
+
+```dart
+GradientCard(
+  title: photo!.title,
+  url: photo!.featuredImageThumbnailUrl,
+  borderRadius: xs,
+  width: double.infinity,
+  height: 94,
+  onTap: () => service.openPostOnTop(photo!),
+),
+```
+
+
 
 ### IconTextButton
 
