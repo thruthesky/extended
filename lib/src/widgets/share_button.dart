@@ -23,7 +23,12 @@ class ShareButton extends StatelessWidget {
         child: child,
       ),
       onTap: () {
-        Share.share(text, subject: subject);
+        final box = context.findRenderObject() as RenderBox?;
+        Share.share(
+          text,
+          subject: subject,
+          sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+        );
       },
     );
   }
