@@ -25,7 +25,14 @@ class FutureShareButton extends StatelessWidget {
       ),
       onTap: () async {
         String text = await futureText();
-        Share.share(text, subject: subject);
+
+        final box = context.findRenderObject() as RenderBox?;
+
+        Share.share(
+          text,
+          subject: subject,
+          sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+        );
       },
     );
   }

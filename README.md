@@ -135,6 +135,8 @@ ExtendedColumn(
 
 ### ExtendedListTile
 
+![Extended Column](https://github.com/thruthesky/extended/raw/main/res/tappable_column.png)
+
 - `ExtendedListTile` is a copy widget from `ListTile`. It works similar to `ListTile` but does not supprot all the properties.
 
 ```dart
@@ -149,6 +151,46 @@ ExtendedListTile(
   onTap: () => {},
 ),
 ```
+
+### TipBox
+
+
+![Extended Column](https://github.com/thruthesky/extended/raw/main/res/img/tip_box.jpg)
+
+
+- `TipBox` is a variant of `ExtendedListTile`. It simply wraps `ExtendedListTile` with some default options to make it look as what `TipBox` is. See the source code of `TipBox` to understand what it does.
+
+```dart
+TipBox(
+  onTap: service.openProfile,
+  margin: EdgeInsets.only(top: 16),
+  padding: EdgeInsets.all(16),
+  spacing: 16,
+  leading: FaDuotoneIcon(
+    FontAwesomeIcons.duotoneIdBadge,
+    primaryColor: grey,
+    secondaryColor: light,
+    size: 26,
+  ),
+  title: Text(
+    'PROFILE STATUS',
+    style: TextStyle(
+      color: Colors.grey[700],
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+  subtitle: Text(
+    'Incomplete',
+    style: TextStyle(
+      color: Colors.orange[600],
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+  trailingText: 'Update profile',
+),
+```
+
+
 
 ### GradientCard
 

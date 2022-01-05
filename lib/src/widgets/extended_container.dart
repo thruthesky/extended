@@ -57,26 +57,32 @@ class ExtendedContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      onDoubleTap: onDoubleTap,
-      onLongPress: onLongPress,
-      behavior: HitTestBehavior.opaque,
-      child: Container(
-        alignment: alignment,
-        padding: padding,
-        color: color,
-        decoration: decoration,
-        foregroundDecoration: foregroundDecoration,
-        width: width,
-        height: height,
-        constraints: constraints,
-        margin: margin,
-        transform: transform,
-        transformAlignment: transformAlignment,
-        child: child,
-        clipBehavior: clipBehavior,
-      ),
+    final _child = Container(
+      alignment: alignment,
+      padding: padding,
+      color: color,
+      decoration: decoration,
+      foregroundDecoration: foregroundDecoration,
+      width: width,
+      height: height,
+      constraints: constraints,
+      margin: margin,
+      transform: transform,
+      transformAlignment: transformAlignment,
+      child: child,
+      clipBehavior: clipBehavior,
     );
+
+    if (onTap != null || onDoubleTap != null || onLongPress != null) {
+      return GestureDetector(
+        onTap: onTap,
+        onDoubleTap: onDoubleTap,
+        onLongPress: onLongPress,
+        behavior: HitTestBehavior.opaque,
+        child: _child,
+      );
+    } else {
+      return _child;
+    }
   }
 }

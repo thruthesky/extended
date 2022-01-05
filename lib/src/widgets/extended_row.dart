@@ -54,36 +54,42 @@ class ExtendedRow extends StatelessWidget {
       _children = _flexes(_children, flexes!);
     }
 
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: onTap,
-      onLongPress: onLongPress,
-      onDoubleTap: onDoubleTap,
-      child: Container(
-        margin: margin,
-        padding: padding,
-        width: width,
-        height: height,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          border: Border.all(
-            color: borderColor,
-            width: borderWidth,
-            style: BorderStyle.solid,
-          ),
-          borderRadius: BorderRadius.circular(borderRadius),
+    final child = Container(
+      margin: margin,
+      padding: padding,
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        border: Border.all(
+          color: borderColor,
+          width: borderWidth,
+          style: BorderStyle.solid,
         ),
-        child: Row(
-          children: _children,
-          mainAxisAlignment: mainAxisAlignment,
-          mainAxisSize: mainAxisSize,
-          crossAxisAlignment: crossAxisAlignment,
-          textDirection: textDirection,
-          verticalDirection: verticalDirection,
-          textBaseline: textBaseline,
-        ),
+        borderRadius: BorderRadius.circular(borderRadius),
+      ),
+      child: Row(
+        children: _children,
+        mainAxisAlignment: mainAxisAlignment,
+        mainAxisSize: mainAxisSize,
+        crossAxisAlignment: crossAxisAlignment,
+        textDirection: textDirection,
+        verticalDirection: verticalDirection,
+        textBaseline: textBaseline,
       ),
     );
+
+    if (onTap != null || onDoubleTap != null || onLongPress != null) {
+      return GestureDetector(
+        onTap: onTap,
+        onDoubleTap: onDoubleTap,
+        onLongPress: onLongPress,
+        behavior: HitTestBehavior.opaque,
+        child: child,
+      );
+    } else {
+      return child;
+    }
   }
 
   _flexes(List<Widget> children, List<int> flexes) {
