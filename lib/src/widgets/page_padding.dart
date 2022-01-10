@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// Give padding vertically and horizontally.
 class PagePadding extends StatelessWidget {
   const PagePadding({
-    this.horizontal = 8.0,
+    this.horizontal = 16.0,
     this.vertical = 0.0,
     required this.children,
     Key? key,
