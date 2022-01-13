@@ -1,6 +1,10 @@
 # Change log
 
 
+## 0.1.2
+
+- Documentation
+
 ## 0.1.1
 
 - Add `TipBox`.
