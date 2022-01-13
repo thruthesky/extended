@@ -14,7 +14,8 @@ Future<void> alert(String title, dynamic content) async {
       title: Text(title),
       content: Text(content),
       actions: [
-        TextButton(onPressed: () => Get.back(result: true), child: const Text('Ok')),
+        TextButton(
+            onPressed: () => Get.back(result: true), child: const Text('Ok')),
       ],
     ),
   );

@@ -19,9 +19,12 @@ error(e) {
   // If the error is a TypeError, then handle is nicely.
   else if (e.runtimeType.toString() == '_TypeError') {
     final errstr = e.toString();
-    if (errstr.contains('Future') && errstr.contains('is not a subtype of type')) {
-      alert('Await mistake',
-          'It is a mistake.\n\nHe should use await on Future operation.\n\n' + e.toString());
+    if (errstr.contains('Future') &&
+        errstr.contains('is not a subtype of type')) {
+      alert(
+          'Await mistake',
+          'It is a mistake.\n\nHe should use await on Future operation.\n\n' +
+              e.toString());
     } else {
       alert("Developer mistake!", 'Type error: ' + e.toString());
     }

@@ -27,7 +27,8 @@ class TextTap extends StatelessWidget {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       child: Padding(
-        padding: EdgeInsets.only(left: left, right: right, top: top, bottom: bottom),
+        padding:
+            EdgeInsets.only(left: left, right: right, top: top, bottom: bottom),
         child: Text(
           text,
           style: style,

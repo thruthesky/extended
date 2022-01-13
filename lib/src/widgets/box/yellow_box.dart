@@ -2,7 +2,8 @@ import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 
 class YellowBox extends StatelessWidget {
-  const YellowBox({this.width = 100.0, this.height = 100.0, Key? key}) : super(key: key);
+  const YellowBox({this.width = 100.0, this.height = 100.0, Key? key})
+      : super(key: key);
 
   final double width;
   final double height;

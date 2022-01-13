@@ -12,6 +12,7 @@ import 'package:get/get.dart';
 ///
 /// The default value is null if not given.
 T getArg<T>(String name, [dynamic defaultValue]) {
-  return (Get.arguments == null || Get.arguments[name] == null ? defaultValue : Get.arguments[name])
-      as T;
+  return (Get.arguments == null || Get.arguments[name] == null
+      ? defaultValue
+      : Get.arguments[name]) as T;
 }

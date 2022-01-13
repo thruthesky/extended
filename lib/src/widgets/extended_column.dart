@@ -31,7 +31,8 @@ class ExtendedColumn extends StatelessWidget {
   final CrossAxisAlignment crossAxisAlignment;
   final TextDirection? textDirection;
   final VerticalDirection verticalDirection;
-  final TextBaseline? textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
+  final TextBaseline?
+      textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
 
   final List<Widget> children;
   final List<int>? flexes;

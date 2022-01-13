@@ -49,7 +49,8 @@ class GradientCardScreen extends StatelessWidget {
                     left: 10,
                   ),
                   Positioned(
-                    child: Icon(Icons.open_in_new_sharp, color: Colors.redAccent),
+                    child:
+                        Icon(Icons.open_in_new_sharp, color: Colors.redAccent),
                     top: 10,
                     right: 10,
                   ),
@@ -60,7 +61,8 @@ class GradientCardScreen extends StatelessWidget {
               const SizedBox(height: 4),
               GradientCard(
                 child: const GreenBox(height: 200, width: 200),
-                title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
+                title:
+                    'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
                 titleMaxLines: 2,
                 onTap: () => alert('Gradient Card', "Card Tapped!"),
                 gradientColors: const [Colors.grey, Colors.transparent],
@@ -72,7 +74,8 @@ class GradientCardScreen extends StatelessWidget {
                 child: GreenBox(height: 200, width: 200),
                 url:
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/220px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
-                title: 'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
+                title:
+                    'Gradient card, 2 lines, grey transparent gradient, 1234 abcdefg.',
                 titleMaxLines: 2,
               ),
             ],
