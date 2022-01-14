@@ -157,6 +157,8 @@ ExtendedListTile(
 
 ![Extended Column](https://github.com/thruthesky/extended/raw/main/res/img/tip_box.jpg)
 
+![Extended Column](https://github.com/thruthesky/extended/raw/main/res/img/tip_box2.jpg)
+
 
 - `TipBox` is a variant of `ExtendedListTile`. It simply wraps `ExtendedListTile` with some default options to make it look as what `TipBox` is. See the source code of `TipBox` to understand what it does.
 
@@ -259,6 +261,24 @@ GradientCard(
 ```
 
 
+### Button
+
+![Button](https://github.com/thruthesky/extended/raw/main/res/img/button.jpg)
+
+
+```dart
+Button(
+  text: 'Button',
+  margin: ... ,
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+  backgroundColor: Colors.yellow[800]!,
+  color: white,
+  chid: ... ,
+  radius: ... ,
+  onTap: ... ,
+)
+```
+
 
 ### IconTextButton
 
@@ -299,6 +319,14 @@ IconTextButton(
 ### Spinner
 
 ### Avatar
+
+
+![Avatar](https://github.com/thruthesky/extended/raw/main/res/img/avatar.jpg)
+
+```dart
+Avatar(url: 'https://placekitten.com/200/200')
+```
+
 
 ### CachedImage
 
