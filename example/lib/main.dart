@@ -2,6 +2,7 @@ import 'package:example/screens/download_screen.dart';
 import 'package:example/screens/extended_column.screen.dart';
 import 'package:example/screens/gradient_card.screen.dart';
 import 'package:example/screens/extended_row.screen.dart';
+import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -68,6 +69,32 @@ class _MyHomePageState extends State<MyHomePage> {
                 MaterialPageRoute(builder: (c) => const DownloadScreen()),
               ),
               child: const Text('Download'),
+            ),
+            const SizedBox(height: 32),
+            const Divider(),
+            const Text('Button'),
+            Button(
+              text: 'Button',
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              backgroundColor: Colors.yellow[800]!,
+              color: white,
+            ),
+            const Divider(),
+            const Text('Avatar'),
+            const Avatar(url: 'https://placekitten.com/200/200'),
+            const Divider(),
+            const Text('TipBox'),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: TipBox(
+                padding: EdgeInsets.all(16),
+                leading: Icon(Icons.access_alarms),
+                title: Text(
+                  'This is top box title!',
+                  style: TextStyle(fontSize: 18),
+                ),
+                subtitle: Text('And this is subtitle'),
+              ),
             ),
           ],
         ),

@@ -15,6 +15,8 @@ class Button extends StatelessWidget {
 
   final String? text;
   final Widget? child;
+
+  /// [color] is used with [text] only.
   final Color color;
   final Color backgroundColor;
   final EdgeInsets margin;

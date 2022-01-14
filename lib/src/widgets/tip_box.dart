@@ -8,7 +8,7 @@ class TipBox extends StatelessWidget {
   const TipBox({
     this.leading,
     this.trailing,
-    required this.trailingText,
+    this.trailingText = 'Tap here',
     this.title,
     this.subtitle,
     this.spacing = 12,
