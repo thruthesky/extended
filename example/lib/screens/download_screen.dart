@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +19,10 @@ class _DownloadScreenState extends State<DownloadScreen> {
 
   init() async {
     try {
-      download('', expiration: const Duration(minutes: 30));
+      final file = await download('https://jsonplaceholder.typicode.com/posts/1');
+      print(file);
+      final content = await downloadContent('https://jsonplaceholder.typicode.com/posts/1');
+      print(const Utf8Decoder(allowMalformed: true).convert(content));
     } catch (e) {
       error(e);
     }

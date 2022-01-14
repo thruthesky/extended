@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 context,
                 MaterialPageRoute(builder: (c) => const ExtendedColumnScreen()),
               ),
-              child: const Text('Tappable Column'),
+              child: const Text('ExtendedColumn'),
             ),
             ElevatedButton(
               onPressed: () => Navigator.push(

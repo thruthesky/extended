@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:path_provider/path_provider.dart';
 import 'package:dio/dio.dart';
 
@@ -91,7 +92,7 @@ Future<String> download(
     DateTime lastModifiedDateTime = file.lastModifiedSync();
     DateTime expire = lastModifiedDateTime.add(expiration);
 
-    // The downloaded file has already expired?
+    // Download again only if the downloaded file has already expired.
     if (expire.compareTo(now) < 0) {
       // print('---- yes, downloaded file is expired');
       await _downloadUrl(url, pathToSave,
@@ -108,6 +109,7 @@ Future<String> download(
         onDownloadProgress: onDownloadProgress);
   }
 
+  // return the file path.
   return pathToSave;
 
   /// Read the file
@@ -121,7 +123,33 @@ Future<String> download(
   // return file.readAsBytesSync();
 }
 
-_downloadUrl(
+Future<Uint8List> downloadContent(
+  String url, {
+  Duration expiration = const Duration(days: 365),
+  String? filename,
+  String? dirPath,
+  Function? onDownloadBegin,
+  Function? onDownloadEnd,
+  Function? onDownloadProgress,
+}) async {
+  final path = await download(
+    url,
+    expiration: expiration,
+    filename: filename,
+    dirPath: dirPath,
+    onDownloadBegin: onDownloadBegin,
+    onDownloadEnd: onDownloadEnd,
+    onDownloadProgress: onDownloadProgress,
+  );
+
+  /// Read the file
+  final file = File(path);
+
+  /// Return the content of the file.
+  return await file.readAsBytes();
+}
+
+Future<void> _downloadUrl(
   String url,
   String path, {
   Function? onDownloadBegin,

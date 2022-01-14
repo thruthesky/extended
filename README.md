@@ -321,7 +321,39 @@ IconTextButton(
 
 ### getArg
 
-### download
+### Download
+
+- Download contents from internet.
+
+```dart
+try {
+  final file = await download('https://jsonplaceholder.typicode.com/posts/1');
+  print(file);
+  final content = await downloadContent('https://jsonplaceholder.typicode.com/posts/1');
+  print(const Utf8Decoder(allowMalformed: true).convert(content));
+} catch (e) {
+  error(e);
+}
+```
+
+- `download()` downloads contents from internet and returns a file path after saving the content in it.
+- `downloadContent()` download the contents using `download()` and returns the contents of it.
+
+- Both of the functions has same options.
+  - [url] is the url to download.
+  - [filename] is the file name to save.
+  - It is optional. If it is not set, then it will get the file name from url.
+  - I will take the last 64 letters from the end of the url and use it after escaping.
+  - [dirPath] is the directory path to save the file.
+  - if it is not set, then the file will be saved in temporary folder
+  - [expiration] is the time interval to download the file again.
+  -   if it is `expiration: Duration(minutes: 500)`, then it will download again after 500 minutes. default is 365 days (a year)
+  - [onDownloadBegin], [onDownloadEnd], [onDownloadProgress] are the callback on downloda events. If the file has already downloaded and not expired, then the callbacks will be not called.
+  - [onDownloadProgress] will be called with -1 if the downloadable size is not known from the backend. onDownloadProgress has three params. first int is for percentage, second int is for how many bytes received, and the third int is for total. If the total is -1, then display the received bytes on screen.
+  - The progress percentage is mostly working with binary data download.
+
+- TIP, App can download a content in one screen and reuse the same file path in another screen.
+
 
 ### printLongString
 
