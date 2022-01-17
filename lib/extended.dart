@@ -12,10 +12,11 @@ export 'src/widgets/cached_image.dart';
 export 'src/widgets/page_padding.dart';
 export 'src/widgets/share_button.dart';
 export 'src/widgets/future_share_button.dart';
-export 'src/widgets/form_select.dart';
+export 'src/widgets/form/select.dart';
+export 'src/widgets/form/popup.dart';
 export 'src/widgets/text_chip.dart';
 export 'src/widgets/text_tap.dart';
-export 'src/widgets/input.dart';
+export 'src/widgets/form/input.dart';
 export 'src/widgets/button.dart';
 
 export 'src/widgets/box/box.dart';

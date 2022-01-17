@@ -38,73 +38,96 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Enhanced'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (c) => const ExtendedRowScreen()),
-              ),
-              child: const Text('ExtendedRow'),
-            ),
-            ElevatedButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (c) => const ExtendedColumnScreen()),
-              ),
-              child: const Text('ExtendedColumn'),
-            ),
-            ElevatedButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (c) => const GradientCardScreen()),
-              ),
-              child: const Text('Gradient Card'),
-            ),
-            ElevatedButton(
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (c) => const DownloadScreen()),
-              ),
-              child: const Text('Download'),
-            ),
-            const SizedBox(height: 32),
-            const Divider(),
-            const Text('Button'),
-            Button(
-              text: 'Button',
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              backgroundColor: Colors.yellow[800]!,
-              color: white,
-            ),
-            const Divider(),
-            const Text('Avatar'),
-            const Avatar(url: 'https://placekitten.com/200/200'),
-            const Divider(),
-            const Text('TipBox'),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: TipBox(
-                padding: EdgeInsets.all(16),
-                leading: Icon(Icons.access_alarms),
-                title: Text(
-                  'This is top box title!',
-                  style: TextStyle(fontSize: 18),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (c) => const ExtendedRowScreen()),
                 ),
-                subtitle: Text('And this is subtitle'),
+                child: const Text('ExtendedRow'),
               ),
-            ),
-            const Divider(),
-            FormSelect(
-              options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
-              defaultValue: '',
-              selectedValue: 'b',
-              defaultLabel: 'Select category',
-              onChanged: (v) => print(v),
-            ),
-          ],
+              ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (c) => const ExtendedColumnScreen()),
+                ),
+                child: const Text('ExtendedColumn'),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (c) => const GradientCardScreen()),
+                ),
+                child: const Text('Gradient Card'),
+              ),
+              ElevatedButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (c) => const DownloadScreen()),
+                ),
+                child: const Text('Download'),
+              ),
+              const SizedBox(height: 32),
+              const Divider(),
+              const Text('Button'),
+              Button(
+                text: 'Button',
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                backgroundColor: Colors.yellow[800]!,
+                color: white,
+              ),
+              const Divider(),
+              const Text('Avatar'),
+              const Avatar(url: 'https://placekitten.com/200/200'),
+              const Divider(),
+              const Text('TipBox'),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: TipBox(
+                  padding: EdgeInsets.all(16),
+                  leading: Icon(Icons.access_alarms),
+                  title: Text(
+                    'This is top box title!',
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  subtitle: Text('And this is subtitle'),
+                ),
+              ),
+              const Divider(),
+              Select(
+                options: const {
+                  'a': 'Apple',
+                  'b': 'Banana',
+                  'c': 'Cherry',
+                  'd': 'Durian'
+                },
+                defaultValue: '',
+                selectedValue: '',
+                defaultLabel: 'Select category',
+                onChanged: (v) => print(v),
+              ),
+              const Divider(),
+              Popup(
+                icon: const Icon(Icons.access_alarm_rounded),
+                options: {
+                  'a': PopupOption(
+                      icon: const Icon(Icons.addchart), label: 'Apple'),
+                  'b': PopupOption(
+                      icon: const Icon(Icons.bookmarks), label: 'Banana'),
+                  'c': PopupOption(
+                      icon: const Icon(Icons.cabin), label: 'Cherry'),
+                },
+                initialValue: 'b',
+                onSelected: (v) => print(v),
+              ),
+            ],
+          ),
         ),
       ),
     );
