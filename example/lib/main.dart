@@ -53,8 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ElevatedButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (c) => const ExtendedColumnScreen()),
+                  MaterialPageRoute(builder: (c) => const ExtendedColumnScreen()),
                 ),
                 child: const Text('ExtendedColumn'),
               ),
@@ -77,8 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               const Text('Button'),
               Button(
                 text: 'Button',
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 backgroundColor: Colors.yellow[800]!,
                 color: white,
               ),
@@ -101,30 +99,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Divider(),
               Select(
-                options: const {
-                  'a': 'Apple',
-                  'b': 'Banana',
-                  'c': 'Cherry',
-                  'd': 'Durian'
-                },
+                options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
                 defaultValue: '',
                 selectedValue: '',
                 defaultLabel: 'Select category',
-                onChanged: (v) => print(v),
+                onChanged: (v) => debugPrint(v),
               ),
               const Divider(),
               Popup(
                 icon: const Icon(Icons.access_alarm_rounded),
                 options: {
-                  'a': PopupOption(
-                      icon: const Icon(Icons.addchart), label: 'Apple'),
-                  'b': PopupOption(
-                      icon: const Icon(Icons.bookmarks), label: 'Banana'),
-                  'c': PopupOption(
-                      icon: const Icon(Icons.cabin), label: 'Cherry'),
+                  'a': PopupOption(icon: const Icon(Icons.addchart), label: 'Apple'),
+                  'b': PopupOption(icon: const Icon(Icons.bookmarks), label: 'Banana'),
+                  'c': PopupOption(icon: const Icon(Icons.cabin), label: 'Cherry'),
                 },
                 initialValue: 'b',
-                onSelected: (v) => print(v),
+                onSelected: (v) => debugPrint(v),
               ),
             ],
           ),
