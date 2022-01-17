@@ -343,6 +343,22 @@ Avatar(url: 'https://placekitten.com/200/200')
 ### Input
 
 
+### FormSelect
+
+
+![FormSelect](https://github.com/thruthesky/extended/raw/main/res/img/form_select.jpg)
+
+
+```dart
+FormSelect(
+  options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
+  defaultValue: '',
+  selectedValue: 'b',
+  defaultLabel: 'Select category',
+  onChanged: (v) => print(v),
+),
+```
+
 
 
 ## Functions
