@@ -20,9 +20,9 @@ class _DownloadScreenState extends State<DownloadScreen> {
   init() async {
     try {
       final file = await download('https://jsonplaceholder.typicode.com/posts/1');
-      print(file);
+      debugPrint(file);
       final content = await downloadContent('https://jsonplaceholder.typicode.com/posts/1');
-      print(const Utf8Decoder(allowMalformed: true).convert(content));
+      debugPrint(const Utf8Decoder(allowMalformed: true).convert(content));
     } catch (e) {
       error(e);
     }

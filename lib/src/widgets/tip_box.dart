@@ -20,9 +20,9 @@ class TipBox extends StatelessWidget {
     this.padding = const EdgeInsets.all(8),
     this.margin,
     this.color,
-    this.borderColor = const Color(0xFFE4E4E4),
+    this.borderColor = const Color(0xFFFFFFFF),
     this.borderRadius = 5.0,
-    this.borderWidth = 1.0,
+    this.borderWidth = 0.0,
     Key? key,
   }) : super(key: key);
 
