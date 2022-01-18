@@ -1,6 +1,12 @@
 # Change log
 
 
+## 0.1.3
+
+- `Popup` added.
+- Minor changes
+
+
 ## 0.1.2
 
 - Documentation

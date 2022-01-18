@@ -343,6 +343,57 @@ Avatar(url: 'https://placekitten.com/200/200')
 ### Input
 
 
+### Select
+
+
+![Select](https://github.com/thruthesky/extended/raw/main/res/img/form_select.jpg)
+
+
+```dart
+Select(
+  options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
+  defaultValue: '',
+  selectedValue: 'b',
+  defaultLabel: 'Select category',
+  onChanged: (v) => print(v),
+),
+```
+
+- Note that, key of option map is the actual value to be used. the value of the option map is the label to be appeared on the view.
+
+- `defaultValue` is the default value and is part of the option.
+
+- Attention, below is an error, since default value is empty string and it is already part of options. So, option has two item with same value, and it produces error.
+
+```dart
+Select(
+  options: const {'': '', 'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
+  defaultValue: '',
+  selectedValue: '',
+  defaultLabel: 'Select category',
+  onChanged: (v) => print(v),
+),
+```
+
+### Popup
+
+- `Popup` is a simple wrapper of `PopupMenuButton`.
+
+![Popup](https://github.com/thruthesky/extended/raw/main/res/img/popup.jpg)
+
+
+```dart
+Popup(
+  icon: const Icon(Icons.access_alarm_rounded),
+  options: {
+    'a': PopupOption(icon: const Icon(Icons.addchart), label: 'Apple'),
+    'b': PopupOption(icon: const Icon(Icons.bookmarks), label: 'Banana'),
+    'c': PopupOption(icon: const Icon(Icons.cabin), label: 'Cherry'),
+  },
+  initialValue: 'b',
+  onSelected: (v) => print(v),
+)
+```
 
 
 ## Functions

@@ -13,7 +13,7 @@ import 'package:extended/extended.dart';
 /// [options] is a map where the key is value and the value of the map is label.
 /// example
 /// ```dart
-/// FormSelect(
+/// Select(
 ///   options: widget.forumController.state.widget.editableCategories!,
 ///   defaultValue: '',
 /// selectedValue: widget.post.categoryId,
@@ -21,8 +21,8 @@ import 'package:extended/extended.dart';
 /// onChanged: (categoryId) => setState(() => widget.post.categoryId = categoryId),
 /// ),
 /// ```
-class FormSelect extends StatefulWidget {
-  const FormSelect({
+class Select extends StatefulWidget {
+  const Select({
     this.defaultValue = '',
     this.defaultLabel = 'Select option',
     required this.options,
@@ -38,10 +38,10 @@ class FormSelect extends StatefulWidget {
   final dynamic selectedValue;
 
   @override
-  _FormSelectState createState() => _FormSelectState();
+  _SelectState createState() => _SelectState();
 }
 
-class _FormSelectState extends State<FormSelect> {
+class _SelectState extends State<Select> {
   dynamic v;
 
   @override
@@ -50,7 +50,7 @@ class _FormSelectState extends State<FormSelect> {
     if (widget.selectedValue != null) {
       v = widget.selectedValue;
 
-      /// If defaultValue is '' and selectedValue is '', then do nothing.
+      /// If defaultValue and selectedValue, then do nothing.
       /// This means, that there is no selectedValue.
       if (widget.defaultValue == widget.selectedValue) {
         ///
