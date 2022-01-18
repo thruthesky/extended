@@ -2,8 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
-  const Avatar({Key? key, required this.url, this.size = 80.0})
-      : super(key: key);
+  const Avatar({Key? key, required this.url, this.size = 80.0}) : super(key: key);
 
   final String url;
   final double size;
@@ -36,8 +35,7 @@ class Avatar extends StatelessWidget {
       child: ClipOval(
         child: child,
       ),
-      constraints: BoxConstraints(
-          minWidth: size, minHeight: size, maxWidth: size, maxHeight: size),
+      constraints: BoxConstraints(minWidth: size, minHeight: size, maxWidth: size, maxHeight: size),
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,
