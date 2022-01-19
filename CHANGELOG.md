@@ -1,6 +1,11 @@
 # Change log
 
 
+## 0.1.4
+
+- `TextTap -> ExtendedText`
+
+
 ## 0.1.3
 
 - `Popup` added.

@@ -33,7 +33,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final titleStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
+  final titleStyle = const TextStyle(
+      fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ElevatedButton(
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (c) => const ExtendedColumnScreen()),
+                  MaterialPageRoute(
+                      builder: (c) => const ExtendedColumnScreen()),
                 ),
                 child: const Text('ExtendedColumn'),
               ),
@@ -78,7 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
               Text('Button', style: titleStyle),
               Button(
                 text: 'Button',
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 backgroundColor: Colors.yellow[800]!,
                 color: white,
               ),
@@ -102,7 +105,12 @@ class _MyHomePageState extends State<MyHomePage> {
               const Divider(),
               Text('Select', style: titleStyle),
               Select(
-                options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
+                options: const {
+                  'a': 'Apple',
+                  'b': 'Banana',
+                  'c': 'Cherry',
+                  'd': 'Durian'
+                },
                 defaultValue: '',
                 selectedValue: '',
                 defaultLabel: 'Select category',
@@ -113,9 +121,12 @@ class _MyHomePageState extends State<MyHomePage> {
               Popup(
                 icon: const Icon(Icons.access_alarm_rounded),
                 options: {
-                  'a': PopupOption(icon: const Icon(Icons.addchart), label: 'Apple'),
-                  'b': PopupOption(icon: const Icon(Icons.bookmarks), label: 'Banana'),
-                  'c': PopupOption(icon: const Icon(Icons.cabin), label: 'Cherry'),
+                  'a': PopupOption(
+                      icon: const Icon(Icons.addchart), label: 'Apple'),
+                  'b': PopupOption(
+                      icon: const Icon(Icons.bookmarks), label: 'Banana'),
+                  'c': PopupOption(
+                      icon: const Icon(Icons.cabin), label: 'Cherry'),
                 },
                 initialValue: 'b',
                 onSelected: (v) => debugPrint(v),
