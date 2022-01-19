@@ -6,13 +6,15 @@ class PopupOption {
   PopupOption({required this.icon, required this.label});
 }
 
-// TODO backgroundColor, padding, margin, inkWell,
 class Popup extends StatelessWidget {
   const Popup({
     required this.icon,
     required this.onSelected,
     required this.initialValue,
     required this.options,
+    this.padding = const EdgeInsets.all(8),
+    this.margin,
+    this.decoration,
     Key? key,
   }) : super(key: key);
 
@@ -21,10 +23,21 @@ class Popup extends StatelessWidget {
   final String initialValue;
   final Map<String, PopupOption> options;
 
+  final EdgeInsets padding;
+  final EdgeInsets? margin;
+  final BoxDecoration? decoration;
+
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<String>(
-      child: icon,
+      child: InkWell(
+        child: Container(
+          margin: margin,
+          padding: padding,
+          decoration: decoration,
+          child: icon,
+        ),
+      ),
       onSelected: onSelected,
       initialValue: initialValue,
       itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[

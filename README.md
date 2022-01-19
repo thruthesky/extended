@@ -415,6 +415,8 @@ Popup(
 )
 ```
 
+- It supprots, `padding`, `margin`, `decoration: BoxDecoration`.
+
 
 ## Functions
 
