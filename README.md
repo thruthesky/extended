@@ -1,8 +1,11 @@
 # Extended
 
-- A set of handy widgets and functions that are extended based on Material and Cupertino widgets.
-  - Some of widgets in this package are simply a copy of an existing widgets with some additional properties.
-  For instance, `Column` widget does column thing only. It does not have background color, tap handler, margin, padding, etc. And we often need to wrap `Coulmn` with additional widgets to have those functionalities on it. This is one reason why we have `Extended` package here.
+- Flutter widgets, especially Material and Cupertino widgets, does things what they should do.
+  For instance, `Column` does column things only. It does not have margin, padding, color, and other properties. Imagin HTML and CSS, all HTML tags with CSS have padding, margin, color, and all the common properties. `Extended` comes with this concept. In `Extended` package, `Column` does column things plus all the common properties.
+
+- `Extended` is a set of handy widgets that are extended based on Material and Cupertino widgets.
+  Some of widgets are simply a copy of an existing widgets with some additional properties.
+  For instance, `ExtendedColumn` has background color, tap handler, margin, padding, other common properties and functionalities.
 
 - `Extended` package also provide some functions like openning dialogs, downloading, caching files and other helper functions.
 
@@ -41,6 +44,7 @@
   - onTap,
   - onLongPress,
   - onDoubleTap
+  - decoration: BoxDecoration,
 
 - See the example codes and try to open the source file in the paackage. It will surely gives you an idea how the `Extended` widgets are built, and how to use.
 
@@ -341,6 +345,20 @@ Avatar(url: 'https://placekitten.com/200/200')
 
 - It supports all `Text` properties with extended properties.
 
+![ExtendedText](https://github.com/thruthesky/extended/raw/main/res/img/extended_text.jpg)
+
+
+```dart
+ExtendedText(
+  'This is extended text',
+  padding: const EdgeInsets.all(16),
+  style: TextStyle(
+    color: Colors.red.shade800,
+  ),
+  decoration: BoxDecoration(color: Colors.grey.shade300),
+  onTap: () => alert('ExtendedText', 'tapped'),
+),
+```
 
 ### Input
 

@@ -1,41 +1,89 @@
 import 'package:flutter/material.dart';
 
-class TextTap extends StatelessWidget {
-  const TextTap(
-    this.text, {
-    required this.onTap,
-    this.style,
-    this.top = 0,
-    this.left = 0,
-    this.right = 0,
-    this.bottom = 0,
-    this.textAlign,
+class ExtendedText extends StatelessWidget {
+  const ExtendedText(
+    this.data, {
     Key? key,
+    this.style,
+    this.strutStyle,
+    this.textAlign,
+    this.textDirection,
+    this.locale,
+    this.softWrap,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticsLabel,
+    this.textWidthBasis,
+    this.padding,
+    this.decoration,
+    this.width,
+    this.height,
+    this.margin,
+    this.onTap,
+    this.onDoubleTap,
+    this.onLongPress,
   }) : super(key: key);
-
-  final String text;
+  final String? data;
   final TextStyle? style;
-  final VoidCallback onTap;
-  final double top;
-  final double left;
-  final double right;
-  final double bottom;
+  final StrutStyle? strutStyle;
   final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticsLabel;
+  final TextWidthBasis? textWidthBasis;
+
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
+
+  final double? width;
+  final double? height;
+
+  final void Function()? onTap;
+  final void Function()? onDoubleTap;
+  final void Function()? onLongPress;
+
+  final Decoration? decoration;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      child: Padding(
-        padding:
-            EdgeInsets.only(left: left, right: right, top: top, bottom: bottom),
-        child: Text(
-          text,
-          style: style,
-          textAlign: textAlign,
-        ),
-      ),
-      onTap: onTap,
+    final _text = Text(
+      data!,
+      style: style,
+      strutStyle: strutStyle,
+      textAlign: textAlign,
+      textDirection: textDirection,
+      locale: locale,
+      softWrap: softWrap,
+      overflow: overflow,
+      textScaleFactor: textScaleFactor,
+      maxLines: maxLines,
+      semanticsLabel: semanticsLabel,
+      textWidthBasis: textWidthBasis,
     );
+    final _container = Container(
+      padding: padding,
+      decoration: decoration,
+      width: width,
+      height: height,
+      margin: margin,
+      child: _text,
+    );
+
+    if (onTap != null || onDoubleTap != null || onLongPress != null) {
+      return GestureDetector(
+        onTap: onTap,
+        onDoubleTap: onDoubleTap,
+        onLongPress: onLongPress,
+        behavior: HitTestBehavior.opaque,
+        child: _container,
+      );
+    } else {
+      return _container;
+    }
   }
 }

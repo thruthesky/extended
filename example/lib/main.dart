@@ -4,6 +4,7 @@ import 'package:example/screens/gradient_card.screen.dart';
 import 'package:example/screens/extended_row.screen.dart';
 import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -32,6 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final titleStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const SizedBox(height: 32),
               const Divider(),
-              const Text('Button'),
+              Text('Button', style: titleStyle),
               Button(
                 text: 'Button',
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -81,10 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: white,
               ),
               const Divider(),
-              const Text('Avatar'),
+              Text('Avatar', style: titleStyle),
               const Avatar(url: 'https://placekitten.com/200/200'),
               const Divider(),
-              const Text('TipBox'),
+              Text('TipBox', style: titleStyle),
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: TipBox(
@@ -98,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const Divider(),
+              Text('Select', style: titleStyle),
               Select(
                 options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
                 defaultValue: '',
@@ -106,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onChanged: (v) => debugPrint(v),
               ),
               const Divider(),
+              Text('Popup', style: titleStyle),
               Popup(
                 icon: const Icon(Icons.access_alarm_rounded),
                 options: {
@@ -116,6 +120,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 initialValue: 'b',
                 onSelected: (v) => debugPrint(v),
               ),
+              const Divider(),
+              Text('ExtendedText', style: titleStyle),
+              ExtendedText(
+                'This is extended text',
+                padding: const EdgeInsets.all(16),
+                style: TextStyle(
+                  color: Colors.red.shade800,
+                ),
+                decoration: BoxDecoration(color: Colors.grey.shade300),
+                onTap: () => alert('ExtendedText', 'tapped'),
+              ),
+              const Text('''
+ExtendedText(
+  'This is extended text',
+  padding: const EdgeInsets.all(16),
+  style: TextStyle(
+    color: Colors.red.shade800,
+  ),
+  decoration: BoxDecoration(color: Colors.grey.shade300),
+  onTap: () => alert('ExtendedText', 'tapped'),
+)
+              '''),
             ],
           ),
         ),
