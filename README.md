@@ -24,9 +24,9 @@
 
 ## Features
 
-### Common properties
+### Extended properties
 
-- All the extended widgets have as much as the common properties like below.
+- All the extended widgets have as much of the common properties like below as possible.
 
   - color,
   - backgroundColor,
@@ -337,7 +337,9 @@ Avatar(url: 'https://placekitten.com/200/200')
 ### TextChip
 
 
-### TextTap
+### ExtendedText
+
+- It supports all `Text` properties with extended properties.
 
 
 ### Input
