@@ -1,6 +1,10 @@
 # Change log
 
 
+## 0.1.5
+
+- Adding missed widgets.
+
 ## 0.1.4
 
 - `TextTap -> ExtendedText`
