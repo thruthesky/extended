@@ -2,15 +2,20 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
-  const Avatar({Key? key, required this.url, this.size = 80.0})
-      : super(key: key);
+  const Avatar({
+    Key? key,
+    required this.url,
+    this.onTap,
+    this.size = 80.0,
+  }) : super(key: key);
 
   final String url;
   final double size;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    late Widget child;
+    Widget child;
     if (url.startsWith('http')) {
       child = CachedNetworkImage(
         imageUrl: url,
@@ -32,12 +37,11 @@ class Avatar extends StatelessWidget {
         ),
       );
     }
-    return Container(
+    child = Container(
       child: ClipOval(
         child: child,
       ),
-      constraints: BoxConstraints(
-          minWidth: size, minHeight: size, maxWidth: size, maxHeight: size),
+      constraints: BoxConstraints(minWidth: size, minHeight: size, maxWidth: size, maxHeight: size),
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,
@@ -45,6 +49,13 @@ class Avatar extends StatelessWidget {
         //   BoxShadow(color: Colors.white, blurRadius: 1.0, spreadRadius: 1.0),
         // ],
       ),
+    );
+
+    if (onTap == null) return child;
+    return GestureDetector(
+      onTap: onTap,
+      child: child,
+      behavior: HitTestBehavior.opaque,
     );
   }
 }

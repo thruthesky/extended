@@ -328,7 +328,7 @@ IconTextButton(
 ![Avatar](https://github.com/thruthesky/extended/raw/main/res/img/avatar.jpg)
 
 ```dart
-Avatar(url: 'https://placekitten.com/200/200')
+Avatar(url: 'https://placekitten.com/200/200', size: 80, onTap: ...);
 ```
 
 
