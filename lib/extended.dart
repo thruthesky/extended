@@ -28,6 +28,7 @@ export 'src/widgets/box/yellow_box.dart';
 export 'src/functions/alert.dart';
 export 'src/functions/error.dart';
 export 'src/functions/confirm.dart';
+export 'src/functions/input_dialog.dart';
 
 export 'src/functions/hex_color.dart';
 export 'src/functions/get_arg.dart';
