@@ -10,7 +10,7 @@ class Popup extends StatelessWidget {
   const Popup({
     required this.icon,
     required this.onSelected,
-    required this.initialValue,
+    this.initialValue = '',
     required this.options,
     this.padding = const EdgeInsets.all(8),
     this.margin,
