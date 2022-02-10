@@ -15,6 +15,7 @@ typedef VoidCallbackString = void Function(String, _InputState);
 /// default). If [controller] is null, then a [TextEditingController]
 /// will be constructed automatically and its `text` will be initialized
 /// to [initialValue] or the empty string.
+///
 class Input extends StatefulWidget {
   const Input({
     required this.onChanged,
@@ -115,7 +116,10 @@ class _InputState extends State<Input> {
         TextField(
           controller: controller,
           // 텍스트 입력 창의 값이 변하면, subscription 으로 값 전달해서 처리.
-          onChanged: (value) => subject.add(value),
+          onChanged: (value) {
+            showLoader();
+            subject.add(value);
+          },
           decoration: widget.decoration,
           focusNode: widget.focusNode,
           keyboardType: widget.keyboardType,

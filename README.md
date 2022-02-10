@@ -362,6 +362,18 @@ ExtendedText(
 
 ### Input
 
+```dart
+Input(
+  initialValue: 'initial value',
+  debounceTime: 1200,
+  decoration: textInputDecoration(hintText: 'name', labelText: 'label name'),
+  onChanged: (v, input) => my
+      .update(field: 'name', value: v)
+      .then((value) => input.hideLoader())
+      .catchError(service.error),
+),
+```
+
 
 ### Select
 
