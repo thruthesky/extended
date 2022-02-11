@@ -16,7 +16,7 @@
 
 ### Registering global navigator key
 
-- Add global navigator key, to use `alert`, `confirm`, `getArg`, `inputDialog`
+- Add global navigator key, to use `alert`, `confirm`, `getArg`, `inputDialog`, `error`
 
 ```dart
 GlobalKey<NavigatorState> globalNavigatorKey = GlobalKey();
