@@ -12,9 +12,16 @@ import 'package:flutter/material.dart';
 /// ```
 ///
 /// The default value is null if not given.
-T getArg<T>(String name, [dynamic defaultValue]) {
-  final arguments = ModalRoute.of(ExtendedService.instance.navigatorKey!.currentContext!)!
-      .settings
-      .arguments as Map<String, dynamic>;
-  return arguments[name] == null ? defaultValue : arguments[name] as T;
+T getArg<T>(BuildContext context, String name, [dynamic defaultValue]) {
+  // print(ExtendedService.instance.navigatorKey);
+  // print(ExtendedService.instance.navigatorKey!.currentState!.overlay!.context);
+
+  // final context = ExtendedService.instance.navigatorKey!.currentContext!;
+  print(ModalRoute.of(context));
+
+  final arguments = ModalRoute.of(context)!.settings.arguments;
+  if (arguments == null) return defaultValue;
+  print('arguments; $arguments');
+  Map<String, dynamic> args = Map<String, dynamic>.from(arguments as Map<String, dynamic>);
+  return args[name] == null ? defaultValue : args[name] as T;
 }

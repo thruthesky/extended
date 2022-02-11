@@ -4,25 +4,45 @@ import 'package:example/screens/gradient_card.screen.dart';
 import 'package:example/screens/extended_row.screen.dart';
 import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+
+GlobalKey<NavigatorState> globalNavigatorKey = GlobalKey();
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    ExtendedService.instance.navigatorKey = globalNavigatorKey;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
+      navigatorKey: globalNavigatorKey,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(),
+        '/getArg': (context) => Scaffold(
+              appBar: AppBar(title: const Text('getArg() test screen')),
+              body: Text('a is for ${getArg(context, 'a', '')},\nb is for ${getArg(context, 'b')}'),
+            ),
+      },
     );
   }
 }
@@ -36,6 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final titleStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,6 +98,44 @@ class _MyHomePageState extends State<MyHomePage> {
                         MaterialPageRoute(builder: (c) => const DownloadScreen()),
                       ),
                       child: const Text('Download'),
+                    ),
+                  ],
+                ),
+                const Divider(),
+                Wrap(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        alert('Alert Box', 'This is alert box');
+                      },
+                      child: const Text('alert'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () async {
+                        final re = await confirm(
+                            'Confirm Dialog', 'Do you want to press yes button? or no button?');
+
+                        alert('Result', 'You have pressed ${re ? 'YES' : 'NO'} button');
+                      },
+                      child: const Text('confirm'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () async {
+                        final re =
+                            await inputDialog('Input dialog box', 'What do you want to input?');
+                        alert('Result', 'You have input; $re');
+                      },
+                      child: const Text('input dialog'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/getArg',
+                          arguments: {'a': 'Apple', 'b': 'Banana'},
+                        );
+                      },
+                      child: const Text('getArg'),
                     ),
                   ],
                 ),

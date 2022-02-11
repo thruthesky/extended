@@ -12,13 +12,31 @@
 - `Extended` package depends on some of the best widgets in `pub.dev` to extend its functionalities.
 
 
-## Requirements
-
-- `Extended` uses `Get` package as its dependency that means, the app must use `GetMaterialApp` (not `MaterialApp`).
-
-
-
 ## Coding Guideline
+
+### Registering global navigator key
+
+- Add global navigator key, to use `alert`, `confirm`, `getArg`, `inputDialog`
+
+```dart
+GlobalKey<NavigatorState> globalNavigatorKey = GlobalKey();
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    ExtendedService.instance.navigatorKey = globalNavigatorKey;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      navigatorKey: globalNavigatorKey,
+      // ...
+    );
+  }
+}
+```
 
 ### Naming
 
@@ -55,12 +73,6 @@
 Just add the package name and version into your pubspec.yaml
 
 ## Usage
-
-- Add global navigator key, to use `alert`, `confirm`, `getArg`, `inputDialog`
-
-```dart
-ExtendedService.instance.navigatorKey = /** globalNavigatorKey */;
-```
 
 ### Boxes
 

@@ -9,7 +9,7 @@
             "cwd": "example",
             "request": "launch",
             "type": "dart",
-            "deviceId": "73D8111E-D521-401E-A956-A9E687CD8679"
+            "deviceId": "73CCDB85-2F31-4121-A76C-4280504F5651"
         },
         {
             "name": "extended (profile mode)",
