@@ -1,4 +1,5 @@
 export 'src/defines.dart';
+export 'src/extended.service.dart';
 export 'src/widgets/avatar.dart';
 export 'src/widgets/extended_container.dart';
 export 'src/widgets/extended_column.dart';

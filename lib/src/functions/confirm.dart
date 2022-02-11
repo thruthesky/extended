@@ -1,5 +1,5 @@
+import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 /// Confirm dialog
 ///
@@ -7,19 +7,21 @@ import 'package:get/get.dart';
 /// It return true on "Yes" button click. Otherwise false. Note that, false will
 /// be returned on closing by backdrop.
 Future<bool> confirm(String title, String content) async {
+  if (ExtendedService.instance.navigatorKey == null) throw ERROR_NAVIGATOR_KEY;
+  final context = ExtendedService.instance.navigatorKey!.currentContext!;
   final re = await showDialog<bool>(
-    context: Get.context!,
+    context: context,
     builder: (context) {
       return AlertDialog(
         title: Text(title),
         content: Text(content),
         actions: [
           TextButton(
-            onPressed: () => Get.back(result: true),
+            onPressed: () => Navigator.pop(context, true),
             child: const Text('Yes'),
           ),
           TextButton(
-            onPressed: () => Get.back(result: false),
+            onPressed: () => Navigator.pop(context, false),
             child: const Text('No'),
           )
         ],

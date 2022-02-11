@@ -56,6 +56,12 @@ Just add the package name and version into your pubspec.yaml
 
 ## Usage
 
+- Add global navigator key, to use `alert`, `confirm`, `getArg`, `inputDialog`
+
+```dart
+ExtendedService.instance.navigatorKey = /** globalNavigatorKey */;
+```
+
 ### Boxes
 
 - There are some box widget.

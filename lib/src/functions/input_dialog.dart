@@ -1,12 +1,15 @@
+import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 /// Input dialog
 ///
 Future<String?> inputDialog(String title, String content) {
+  if (ExtendedService.instance.navigatorKey == null) throw ERROR_NAVIGATOR_KEY;
+  final context = ExtendedService.instance.navigatorKey!.currentContext!;
+
   final input = TextEditingController(text: '');
   return showDialog(
-    context: Get.context!,
+    context: context,
     builder: (c) => AlertDialog(
       title: Text(title),
       content: Column(
@@ -23,15 +26,15 @@ Future<String?> inputDialog(String title, String content) {
       actions: [
         TextButton(
           onPressed: () {
-            Get.back();
+            Navigator.pop(context);
           },
-          child: Text('close'.tr),
+          child: const Text('Close'),
         ),
         TextButton(
           onPressed: () async {
-            Get.back(result: input.text);
+            Navigator.pop(context, input.text);
           },
-          child: Text('submit'.tr),
+          child: const Text('Submit'),
         ),
       ],
     ),

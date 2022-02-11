@@ -1,5 +1,10 @@
 # Change log
 
+## 0.1.7
+
+- remove getx and its depending codes
+
+
 
 ## 0.1.6
 

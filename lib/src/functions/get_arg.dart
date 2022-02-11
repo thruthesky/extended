@@ -1,4 +1,5 @@
-import 'package:get/get.dart';
+import 'package:extended/extended.dart';
+import 'package:flutter/material.dart';
 
 /// Helper method to use the "Get.arguments" method easier.
 ///
@@ -12,7 +13,8 @@ import 'package:get/get.dart';
 ///
 /// The default value is null if not given.
 T getArg<T>(String name, [dynamic defaultValue]) {
-  return (Get.arguments == null || Get.arguments[name] == null
-      ? defaultValue
-      : Get.arguments[name]) as T;
+  final arguments = ModalRoute.of(ExtendedService.instance.navigatorKey!.currentContext!)!
+      .settings
+      .arguments as Map<String, dynamic>;
+  return arguments[name] == null ? defaultValue : arguments[name] as T;
 }
