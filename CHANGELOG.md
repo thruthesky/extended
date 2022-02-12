@@ -1,5 +1,8 @@
 # Change log
 
+## 0.1.8
+
+- `getArg` is deprecated.
 ## 0.1.7
 
 - remove getx and its depending codes
