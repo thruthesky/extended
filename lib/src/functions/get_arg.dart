@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 /// ```
 ///
 /// The default value is null if not given.
+@Deprecated('Do not use getArg() anymore.')
 T getArg<T>(BuildContext context, String name, [dynamic defaultValue]) {
   // print(ExtendedService.instance.navigatorKey);
   // print(ExtendedService.instance.navigatorKey!.currentState!.overlay!.context);
