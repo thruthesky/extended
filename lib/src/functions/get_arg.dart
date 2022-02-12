@@ -1,4 +1,3 @@
-import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 
 /// Helper method to use the "Get.arguments" method easier.
