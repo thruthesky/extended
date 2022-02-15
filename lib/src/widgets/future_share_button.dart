@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
-typedef FutureStringCallback = Future<String> Function();
+typedef FutureStringCallback = Future<String?> Function();
 
 /// This is a clone of [ShareButton] that provides a callback to produce the text( or link ) lazily.
 class FutureShareButton extends StatelessWidget {
@@ -24,15 +24,16 @@ class FutureShareButton extends StatelessWidget {
         child: child,
       ),
       onTap: () async {
-        String text = await futureText();
+        String? text = await futureText();
+        if (text != null && text.isNotEmpty) {
+          final box = context.findRenderObject() as RenderBox?;
 
-        final box = context.findRenderObject() as RenderBox?;
-
-        Share.share(
-          text,
-          subject: subject,
-          sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
-        );
+          Share.share(
+            text,
+            subject: subject,
+            sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+          );
+        }
       },
     );
   }
