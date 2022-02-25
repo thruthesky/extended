@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+/// [child] can be used over [url].
 class GradientCard extends StatelessWidget {
   const GradientCard({
     this.url,
