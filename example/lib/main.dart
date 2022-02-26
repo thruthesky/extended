@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => const MyHomePage(),
         '/getArg': (context) => Scaffold(
               appBar: AppBar(title: const Text('getArg() test screen')),
-              body: Text('a is for ${getArg(context, 'a', '')},\nb is for ${getArg(context, 'b')}'),
+              body: const Text('a is for ... \$a,\nb is for \$b'),
             ),
       },
     );
@@ -196,7 +196,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: BoxDecoration(color: Colors.grey.shade300),
                   onTap: () => alert('ExtendedText', 'tapped'),
                 ),
-                const Text('''
+                const Text(
+                    '''
           ExtendedText(
             'This is extended text',
             padding: const EdgeInsets.all(16),
