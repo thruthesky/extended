@@ -73,6 +73,7 @@ bool isHtml(String t) {
   if (t.contains('</hr>')) return true;
   if (t.contains('</li>')) return true;
   if (t.contains('<br>')) return true;
+  if (t.contains('<br/>')) return true;
   if (t.contains('<br />')) return true;
   if (t.contains('<p>')) return true;
   if (t.contains('</div>')) return true;
