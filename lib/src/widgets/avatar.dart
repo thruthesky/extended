@@ -41,8 +41,7 @@ class Avatar extends StatelessWidget {
       child: ClipOval(
         child: child,
       ),
-      constraints: BoxConstraints(
-          minWidth: size, minHeight: size, maxWidth: size, maxHeight: size),
+      constraints: BoxConstraints(minWidth: size, minHeight: size, maxWidth: size, maxHeight: size),
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,

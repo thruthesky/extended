@@ -11,6 +11,12 @@
 
 - `Extended` package depends on some of the best widgets in `pub.dev` to extend its functionalities.
 
+## TODOs
+
+- Make `ExtendedText` selectable and render html.
+  - user selectable text package and `flutter_html` package to render selectable html.
+  - If the text has any html string, then display it as html.
+  - If a link is clicked, use launchURL to open the link.
 
 ## Coding Guideline
 
