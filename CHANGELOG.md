@@ -1,5 +1,8 @@
 # Change log
 
+## 0.1.9
+
+- utility functions had added.
 ## 0.1.8
 
 - `getArg` is deprecated.

@@ -35,4 +35,4 @@ export 'src/functions/hex_color.dart';
 export 'src/functions/get_arg.dart';
 export 'src/functions/download.dart';
 export 'src/functions/print_long_string.dart';
-export 'src/functions/convert.dart';
+export 'src/functions/utility.dart';

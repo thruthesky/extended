@@ -1,5 +1,11 @@
+import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
+/// As it uses `SelectableLinkify`, [locale], [softWrap], [overflow], [semanticsLabel] are no longer supported as [Text] properties.
+/// Properties for `SelectableLinkify` - [onOpen], [options] for link option, [linkStyle] are added
+/// [onDoubleTap], [onLongPress] are not supported since the text is selectable.
 class ExtendedText extends StatelessWidget {
   const ExtendedText(
     this.data, {
@@ -21,8 +27,9 @@ class ExtendedText extends StatelessWidget {
     this.height,
     this.margin,
     this.onTap,
-    this.onDoubleTap,
-    this.onLongPress,
+    this.onOpen,
+    this.options = const LinkifyOptions(),
+    this.linkStyle,
   }) : super(key: key);
   final String? data;
   final TextStyle? style;
@@ -44,41 +51,55 @@ class ExtendedText extends StatelessWidget {
   final double? height;
 
   final void Function()? onTap;
-  final void Function()? onDoubleTap;
-  final void Function()? onLongPress;
 
   final Decoration? decoration;
 
+  ///
+
+  /// Style of link text
+
+  /// Callback for tapping a link
+  final LinkCallback? onOpen;
+
+  /// linkify's options.
+  final LinkifyOptions options;
+
+  final TextStyle? linkStyle;
+
   @override
   Widget build(BuildContext context) {
-    final _text = Text(
-      data!,
-      style: style,
-      strutStyle: strutStyle,
-      textAlign: textAlign,
-      textDirection: textDirection,
-      locale: locale,
-      softWrap: softWrap,
-      overflow: overflow,
-      textScaleFactor: textScaleFactor,
-      maxLines: maxLines,
-      semanticsLabel: semanticsLabel,
-      textWidthBasis: textWidthBasis,
-    );
+    Widget child;
+
+    if (isHtml(data!)) {
+      child = SelectableHtml(data: data);
+    } else {
+      child = SelectableLinkify(
+        text: data!,
+        style: style,
+        strutStyle: strutStyle,
+        textAlign: textAlign,
+        textDirection: textDirection,
+        textScaleFactor: textScaleFactor,
+        maxLines: maxLines,
+        textWidthBasis: textWidthBasis,
+        onOpen: onOpen,
+        options: options,
+        linkStyle: linkStyle,
+      );
+    }
+
     final _container = Container(
       padding: padding,
       decoration: decoration,
       width: width,
       height: height,
       margin: margin,
-      child: _text,
+      child: child,
     );
 
-    if (onTap != null || onDoubleTap != null || onLongPress != null) {
+    if (onTap != null) {
       return GestureDetector(
         onTap: onTap,
-        onDoubleTap: onDoubleTap,
-        onLongPress: onLongPress,
         behavior: HitTestBehavior.opaque,
         child: _container,
       );
