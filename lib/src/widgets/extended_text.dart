@@ -2,10 +2,8 @@ import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-/// As it uses `SelectableLinkify`, [locale], [softWrap], [overflow], [semanticsLabel] are no longer supported as [Text] properties.
-/// Properties for `SelectableLinkify` - [onOpen], [options] for link option, [linkStyle] are added
-/// [onDoubleTap], [onLongPress] are not supported since the text is selectable.
 class ExtendedText extends StatelessWidget {
   const ExtendedText(
     this.data, {
@@ -30,6 +28,7 @@ class ExtendedText extends StatelessWidget {
     this.onOpen,
     this.options = const LinkifyOptions(),
     this.linkStyle,
+    this.onLinkTap,
   }) : super(key: key);
   final String? data;
   final TextStyle? style;
@@ -54,24 +53,41 @@ class ExtendedText extends StatelessWidget {
 
   final Decoration? decoration;
 
-  ///
-
-  /// Style of link text
-
   /// Callback for tapping a link
-  final LinkCallback? onOpen;
+  final Function(String)? onOpen;
 
   /// linkify's options.
   final LinkifyOptions options;
 
+  /// Style of link text
   final TextStyle? linkStyle;
+
+  /// A function that defines what to do when a link is tapped
+  final OnTap? onLinkTap;
+
+  _onLink(link) async {
+    if (await canLaunch(link)) {
+      await launch(link);
+    } else {
+      throw 'Could not launch $link';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     Widget child;
 
     if (isHtml(data!)) {
-      child = SelectableHtml(data: data);
+      child = SelectableHtml(
+        data: data!,
+        onLinkTap: (text, context, data, element) {
+          if (onOpen != null) {
+            onOpen!(text!);
+          } else {
+            _onLink(text);
+          }
+        },
+      );
     } else {
       child = SelectableLinkify(
         text: data!,
@@ -82,9 +98,16 @@ class ExtendedText extends StatelessWidget {
         textScaleFactor: textScaleFactor,
         maxLines: maxLines,
         textWidthBasis: textWidthBasis,
-        onOpen: onOpen,
+        onOpen: (link) {
+          if (onOpen != null) {
+            onOpen!(link.url);
+          } else {
+            _onLink(link.url);
+          }
+        },
         options: options,
         linkStyle: linkStyle,
+        onTap: onTap,
       );
     }
 

@@ -6,6 +6,7 @@ import 'package:extended/extended.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 
 GlobalKey<NavigatorState> globalNavigatorKey = GlobalKey();
 
@@ -208,6 +209,22 @@ class _MyHomePageState extends State<MyHomePage> {
             onTap: () => alert('ExtendedText', 'tapped'),
           )
                 '''),
+                Text('ExtendedText enabling links', style: titleStyle),
+                ExtendedText(
+                  'This is link: https://google.com oo',
+                  padding: const EdgeInsets.all(16),
+                  style: TextStyle(
+                    color: Colors.red.shade800,
+                  ),
+                  decoration: BoxDecoration(color: Colors.grey.shade300),
+                  onTap: () => alert('onTap', 'onTap on ExtendedText'),
+                ),
+                Text('ExtendedText renderlink HTML', style: titleStyle),
+                ExtendedText(
+                  'This is link: <a href="https://google.com">Tap to open google</a><br><p>Par<b>agra</b>ph</p>',
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(color: Colors.grey.shade300),
+                ),
                 ElevatedButton(
                   onPressed: () async {
                     try {

@@ -1,6 +1,6 @@
 name: extended
 description: A set of handy widgets and functions that are extended based on Material and Cupertino widgets.
-version: 0.1.8
+version: 0.1.9
 homepage: https://github.com/thruthesky/extended
 
 environment:
@@ -30,6 +30,7 @@ dependencies:
   # for extended text.
   flutter_linkify: ^5.0.2
   
+
 
 dev_dependencies:
   flutter_test:

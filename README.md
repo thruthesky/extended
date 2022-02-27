@@ -11,12 +11,6 @@
 
 - `Extended` package depends on some of the best widgets in `pub.dev` to extend its functionalities.
 
-## TODOs
-
-- Make `ExtendedText` selectable and render html.
-  - user selectable text package and `flutter_html` package to render selectable html.
-  - If the text has any html string, then display it as html.
-  - If a link is clicked, use launchURL to open the link.
 
 ## Coding Guideline
 
@@ -367,7 +361,22 @@ Avatar(url: 'https://placekitten.com/200/200', size: 80, onTap: ...);
 
 ### ExtendedText
 
-- It supports all `Text` properties with extended properties.
+- The text is seleable.
+- It renders HTML if the text has HTML tags.
+- It enables the link to clickable when there is link in text but the text does not contains any html tag.
+  - It will open the link using `url_launcher` package if `onOpen` callback is not provided.
+
+- It does not supports some of the `Text` properties along with some of extended properties.
+
+- As it uses `SelectableLinkify`, `[locale], [softWrap], [overflow], [semanticsLabel]` are no longer supported as `Text` properties.
+- Properties of `[onOpen], [options] for link option, [linkStyle]` are added for `SelectableLinkify`.
+  
+- `[onDoubleTap], [onLongPress]` are not supported since the text is selectable.
+
+- `onOpen` callback is added for opening links when they are tapped.
+  - If `onOpen` is not provided, it will use `launchURL` package to open the link.
+
+- Note that, `onTap` is only working when the text has no html tag.
 
 ![ExtendedText](https://github.com/thruthesky/extended/raw/main/res/img/extended_text.jpg)
 
