@@ -75,9 +75,4 @@ build/
 !**/ios/**/default.perspectivev3
 
 
-example/.*
-example/pubspec.lock
-example/android/
-example/ios/
-example/test/
-example/analysis_options.yaml
+
