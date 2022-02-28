@@ -6,6 +6,7 @@ class PagePadding extends StatelessWidget {
     this.horizontal = 16.0,
     this.vertical = 0.0,
     required this.children,
+    this.crossAxisAlignment = CrossAxisAlignment.start,
     Key? key,
   }) : super(key: key);
 
@@ -13,12 +14,15 @@ class PagePadding extends StatelessWidget {
   final double vertical;
   final List<Widget> children;
 
+  final CrossAxisAlignment crossAxisAlignment;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: crossAxisAlignment,
         children: children,
       ),
     );
