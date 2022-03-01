@@ -361,7 +361,9 @@ Avatar(url: 'https://placekitten.com/200/200', size: 80, onTap: ...);
 
 ### ExtendedText
 
-- The text is seleable.
+- The text is seleable on if it has no html tags.
+  - When the text has no html tags, it is rendered with `SelectableLinkify`.
+  - When the text has html tags, it is rendered with `Html` not `SelectableHtml` since, `SelectableHtml` cannot render img tag and has a lot of lackings compared to `Html`.
 - It renders HTML if the text has HTML tags.
 - It enables the link to clickable when there is link in text but the text does not contains any html tag.
   - It will open the link using `url_launcher` package if `onOpen` callback is not provided.
@@ -377,6 +379,9 @@ Avatar(url: 'https://placekitten.com/200/200', size: 80, onTap: ...);
   - If `onOpen` is not provided, it will use `launchURL` package to open the link.
 
 - Note that, `onTap` is only working when the text has no html tag.
+
+- `style` is the `TextStyle` when the text has no html tags.
+- `htmlStyle` is the css style used for `Html` when the text has html tag.
 
 ![ExtendedText](https://github.com/thruthesky/extended/raw/main/res/img/extended_text.jpg)
 

@@ -29,10 +29,12 @@ class ExtendedText extends StatelessWidget {
     this.options = const LinkifyOptions(),
     this.linkStyle,
     this.onLinkTap,
+    this.htmlStyle = const {},
   }) : super(key: key);
   final String? data;
   final TextStyle? style;
   final StrutStyle? strutStyle;
+  final Map<String, Style> htmlStyle;
   final TextAlign? textAlign;
   final TextDirection? textDirection;
   final Locale? locale;
@@ -78,8 +80,9 @@ class ExtendedText extends StatelessWidget {
     Widget child;
 
     if (isHtml(data!)) {
-      child = SelectableHtml(
+      child = Html(
         data: data!,
+        style: htmlStyle,
         onLinkTap: (text, context, data, element) {
           if (onOpen != null) {
             onOpen!(text!);
