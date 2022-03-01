@@ -174,6 +174,29 @@ ExtendedListTile(
 ),
 ```
 
+- It has `titleMainAxisAlignment` and `titleCrossAxisAlignment` to align the title and subtitle in the tile.
+  - To align title subtitle with `titleMainAxisAlignment` and `titleCrossAxisAlignment`, give height.
+
+```dart
+ExtendedListTile(
+  height: 34,
+  leading: UserProfilePhoto(uid: p.uid),
+  title: Text(p.title),
+  titleMainAxisAlignment: MainAxisAlignment.end,
+  titleCrossAxisAlignment: CrossAxisAlignment.end,
+),
+// or
+Container(
+  height: 34,
+  child: ExtendedListTile(
+    leading: UserProfilePhoto(uid: p.uid),
+    title: Text(p.title),
+    titleMainAxisAlignment: MainAxisAlignment.end,
+    titleCrossAxisAlignment: CrossAxisAlignment.end,
+  ),
+),
+```
+
 ### TipBox
 
 
