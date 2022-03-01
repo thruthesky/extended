@@ -174,6 +174,8 @@ ExtendedListTile(
 ),
 ```
 
+- `crosstartAxisAlignment` and `mainAxisAlignment` can be used to align the leading, title, and trailing.
+
 - It has `titleMainAxisAlignment` and `titleCrossAxisAlignment` to align the title and subtitle in the tile.
   - To align title subtitle with `titleMainAxisAlignment` and `titleCrossAxisAlignment`, give height.
 

@@ -20,6 +20,8 @@ class ExtendedListTile extends StatelessWidget {
     this.borderColor = const Color(0xFFFFFFFF),
     this.borderRadius = 0.0,
     this.borderWidth = 0.0,
+    this.crossAxisAlignment = CrossAxisAlignment.start,
+    this.mainAxisAlignment = MainAxisAlignment.start,
     this.titleCrossAxisAlignment = CrossAxisAlignment.start,
     this.titleMainAxisAlignment = MainAxisAlignment.start,
     Key? key,
@@ -42,6 +44,8 @@ class ExtendedListTile extends StatelessWidget {
   final double borderRadius;
   final Color borderColor;
   final double borderWidth;
+  final CrossAxisAlignment crossAxisAlignment;
+  final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment titleCrossAxisAlignment;
   final MainAxisAlignment titleMainAxisAlignment;
 
@@ -62,8 +66,8 @@ class ExtendedListTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: mainAxisAlignment,
+        crossAxisAlignment: crossAxisAlignment,
         children: [
           if (leading != null) ...[
             leading!,
