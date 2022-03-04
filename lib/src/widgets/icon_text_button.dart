@@ -7,6 +7,7 @@ class IconTextButton extends StatelessWidget {
     required this.text,
     this.spacing = 0.0,
     this.padding = const EdgeInsets.all(0),
+    this.align = Axis.vertical,
     Key? key,
     required this.onTap,
   }) : super(key: key);
@@ -17,16 +18,30 @@ class IconTextButton extends StatelessWidget {
   final double spacing;
   final EdgeInsets padding;
 
+  final Axis align;
+
   @override
   Widget build(BuildContext context) {
-    return ExtendedColumn(
-      padding: padding,
-      onTap: onTap,
-      children: [
-        icon,
-        if (spacing != 0) SizedBox(height: spacing),
-        text,
-      ],
-    );
+    if (align == Axis.vertical) {
+      return ExtendedColumn(
+        padding: padding,
+        onTap: onTap,
+        children: [
+          icon,
+          if (spacing != 0) SizedBox(height: spacing),
+          text,
+        ],
+      );
+    } else {
+      return ExtendedRow(
+        padding: padding,
+        onTap: onTap,
+        children: [
+          icon,
+          if (spacing != 0) SizedBox(width: spacing),
+          text,
+        ],
+      );
+    }
   }
 }
