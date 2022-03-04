@@ -65,45 +65,51 @@ class GradientCard extends StatelessWidget {
       errorWidget: errorWidget,
     );
 
+    _child = ClipRRect(
+      borderRadius: BorderRadius.circular(borderRadius),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          _child,
+          Positioned(
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: gradientColors,
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter),
+              ),
+              child: FractionallySizedBox(
+                widthFactor: titleWidthFactor,
+                child: Text(
+                  title,
+                  maxLines: titleMaxLines,
+                  textAlign: titleAlignment,
+                  overflow: textOverflow,
+                  style: titleStyle,
+                ),
+              ),
+            ),
+            left: 0,
+            right: 0,
+            bottom: 0,
+          ),
+          if (overlays != null) ...overlays!,
+        ],
+      ),
+    );
+
+    if (onTap != null || onLongPress != null || onDoubleTap != null) {
+      return _child;
+    }
+
     return GestureDetector(
       onTap: onTap,
       onLongPress: onLongPress,
       onDoubleTap: onDoubleTap,
       behavior: HitTestBehavior.opaque,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(borderRadius),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            _child,
-            Positioned(
-              child: Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: gradientColors,
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter),
-                ),
-                child: FractionallySizedBox(
-                  widthFactor: titleWidthFactor,
-                  child: Text(
-                    title,
-                    maxLines: titleMaxLines,
-                    textAlign: titleAlignment,
-                    overflow: textOverflow,
-                    style: titleStyle,
-                  ),
-                ),
-              ),
-              left: 0,
-              right: 0,
-              bottom: 0,
-            ),
-            if (overlays != null) ...overlays!,
-          ],
-        ),
-      ),
+      child: _child,
     );
   }
 }
