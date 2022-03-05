@@ -63,6 +63,7 @@ class _MyAppState extends State<MyApp> {
   - onLongPress,
   - onDoubleTap
   - decoration: BoxDecoration,
+  - align
 
 - See the example codes and try to open the source file in the paackage. It will surely gives you an idea how the `Extended` widgets are built, and how to use.
 
@@ -362,6 +363,7 @@ IconTextButton(
 
 ### PagePadding
 
+- It arranges the children widgets by giving space on left, right.
 
 ### Spinner
 
