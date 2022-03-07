@@ -100,16 +100,16 @@ class GradientCard extends StatelessWidget {
       ),
     );
 
-    if (onTap != null || onLongPress != null || onDoubleTap != null) {
+    if (onTap != null || onDoubleTap != null || onLongPress != null) {
+      return GestureDetector(
+        onTap: onTap,
+        onDoubleTap: onDoubleTap,
+        onLongPress: onLongPress,
+        behavior: HitTestBehavior.opaque,
+        child: _child,
+      );
+    } else {
       return _child;
     }
-
-    return GestureDetector(
-      onTap: onTap,
-      onLongPress: onLongPress,
-      onDoubleTap: onDoubleTap,
-      behavior: HitTestBehavior.opaque,
-      child: _child,
-    );
   }
 }
