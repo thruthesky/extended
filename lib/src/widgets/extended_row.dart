@@ -13,7 +13,7 @@ class ExtendedRow extends StatelessWidget {
     this.padding,
     this.margin,
     this.backgroundColor,
-    this.borderColor = const Color(0xFFFFFFFF),
+    this.borderColor,
     this.borderRadius = 0.0,
     this.borderWidth = 0.0,
     this.onTap,
@@ -31,8 +31,7 @@ class ExtendedRow extends StatelessWidget {
   final CrossAxisAlignment crossAxisAlignment;
   final TextDirection? textDirection;
   final VerticalDirection verticalDirection;
-  final TextBaseline?
-      textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
+  final TextBaseline? textBaseline; // NO DEFAULT: we don't know what the text's baseline should be
 
   final List<Widget> children;
   final List<int>? flexes;
@@ -45,7 +44,7 @@ class ExtendedRow extends StatelessWidget {
   final void Function()? onLongPress;
   final void Function()? onDoubleTap;
   final double borderRadius;
-  final Color borderColor;
+  final Color? borderColor;
   final double borderWidth;
 
   @override
@@ -62,11 +61,13 @@ class ExtendedRow extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         color: backgroundColor,
-        border: Border.all(
-          color: borderColor,
-          width: borderWidth,
-          style: BorderStyle.solid,
-        ),
+        border: borderColor == null
+            ? null
+            : Border.all(
+                color: borderColor!,
+                width: borderWidth,
+                style: BorderStyle.solid,
+              ),
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: Row(
