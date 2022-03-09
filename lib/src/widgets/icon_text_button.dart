@@ -34,6 +34,7 @@ class IconTextButton extends StatelessWidget {
       );
     } else {
       return ExtendedRow(
+        mainAxisSize: MainAxisSize.min,
         padding: padding,
         onTap: onTap,
         children: [

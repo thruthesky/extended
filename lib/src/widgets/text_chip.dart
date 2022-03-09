@@ -12,6 +12,7 @@ class TextChip extends StatelessWidget {
     this.backgroundColor = Colors.black12,
     this.borderRadius = 4.0,
     this.padding = const EdgeInsets.symmetric(horizontal: 6.0, vertical: 4.0),
+    this.margin,
     required this.onTap,
     Key? key,
   }) : super(key: key);
@@ -22,6 +23,7 @@ class TextChip extends StatelessWidget {
   final Color backgroundColor;
   final double borderRadius;
   final EdgeInsets padding;
+  final EdgeInsets? margin;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ class TextChip extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onTap: () => onTap(),
       child: Container(
+        margin: margin,
         padding: padding,
         child: Text(
           text,
