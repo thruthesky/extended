@@ -399,6 +399,7 @@ Avatar(url: 'https://placekitten.com/200/200', size: 80, onTap: ...);
 
 
 - Note that, It does not use `Text` widget inside. That means, it work differently from `Text` widget. If you need to have a detail design based on `Text` widget, then simply use `Text` widget, instead of using `ExtendedText`.
+  - Text overflow ecllipses would not work with `ExtendedText`.
 
 - As it uses `SelectableLinkify`, `[locale], [softWrap], [overflow], [semanticsLabel]` are no longer supported as `Text` properties.
 - Properties of `[onOpen], [options] for link option, [linkStyle]` are added for `SelectableLinkify`.
