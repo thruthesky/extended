@@ -231,6 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     } catch (e) {
                       debugPrint(e.runtimeType.toString());
                       debugPrint(e.toString());
+                      // ignore: deprecated_member_use
                       await error(e);
                       debugPrint('done');
                       await alert('Done', 'Error handling had finished');
