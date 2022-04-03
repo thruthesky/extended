@@ -42,8 +42,6 @@ const spaceXxl = SizedBox(width: xxl, height: xxl);
 const space2xl = spaceXxl;
 const space3xl = SizedBox(width: xxxl, height: xxxl);
 
-final descriptionStyle = TextStyle(color: Colors.grey[700], fontSize: 12);
-
 /// Extra body text sizes.
 ///
 const TextStyle bodyText3 = TextStyle(fontSize: 14);
