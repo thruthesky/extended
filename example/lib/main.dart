@@ -196,8 +196,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: BoxDecoration(color: Colors.grey.shade300),
                   onTap: () => alert('ExtendedText', 'tapped'),
                 ),
-                const Text(
-                    '''
+                const Text('''
           ExtendedText(
             'This is extended text',
             padding: const EdgeInsets.all(16),
@@ -229,11 +228,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     try {
                       await Firebase.initializeApp();
                     } catch (e) {
-                      debugPrint(e.runtimeType.toString());
-                      debugPrint(e.toString());
+                      // debugPrint(e.runtimeType.toString());
+                      // debugPrint(e.toString());
                       // ignore: deprecated_member_use
                       await error(e);
-                      debugPrint('done');
+                      // debugPrint('done');
                       await alert('Done', 'Error handling had finished');
                     }
                   },
