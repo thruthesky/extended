@@ -128,7 +128,11 @@ class _InputState extends State<Input> {
         ),
         if (_loader)
           Positioned(
-            child: const CircularProgressIndicator.adaptive(),
+            child: const SizedBox(
+              width: 16,
+              height: 16,
+              child: CircularProgressIndicator.adaptive(strokeWidth: 3),
+            ),
             right: widget.loaderRight,
             top: widget.loaderTop,
           ),
