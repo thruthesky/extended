@@ -42,6 +42,8 @@ int toInt(dynamic v) {
   if (v == null) return 0;
   if (v is int) {
     return v;
+  } else if (v is double) {
+    return v.floor();
   } else {
     return int.parse(v);
   }
