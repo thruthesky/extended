@@ -17,19 +17,20 @@ dependencies:
 
   path_provider: ^2.0.2
 
-  share_plus: ^3.0.4
+  share_plus: ^4.0.4
+
   rxdart: ^0.27.3
+
 
   # flutter_html for extended text.
   # flutter_html 2.x has dependency problem with fluter_svg
-  flutter_html: ^3.0.0-alpha.2
+  flutter_html: ^3.0.0-alpha.3
 
   # for extended text.
   url_launcher: ^6.0.20
 
   # for extended text.
   flutter_linkify: ^5.0.2
-  
 
 
 dev_dependencies:
