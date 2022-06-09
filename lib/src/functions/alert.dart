@@ -16,8 +16,8 @@ Future<void> alert(String title, dynamic content) async {
       content: Text(content),
       actions: [
         TextButton(
-            onPressed: () =>
-                Navigator.pop(ExtendedService.instance.navigatorKey!.currentContext!, true),
+            onPressed: () => Navigator.pop(
+                ExtendedService.instance.navigatorKey!.currentContext!, true),
             child: const Text('Ok')),
       ],
     ),

@@ -55,7 +55,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final titleStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
+  final titleStyle = const TextStyle(
+      fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
 
   @override
   Widget build(BuildContext context) {
@@ -74,28 +75,32 @@ class _MyHomePageState extends State<MyHomePage> {
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (c) => const ExtendedRowScreen()),
+                        MaterialPageRoute(
+                            builder: (c) => const ExtendedRowScreen()),
                       ),
                       child: const Text('ExtendedRow'),
                     ),
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (c) => const ExtendedColumnScreen()),
+                        MaterialPageRoute(
+                            builder: (c) => const ExtendedColumnScreen()),
                       ),
                       child: const Text('ExtendedColumn'),
                     ),
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (c) => const GradientCardScreen()),
+                        MaterialPageRoute(
+                            builder: (c) => const GradientCardScreen()),
                       ),
                       child: const Text('Gradient Card'),
                     ),
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (c) => const DownloadScreen()),
+                        MaterialPageRoute(
+                            builder: (c) => const DownloadScreen()),
                       ),
                       child: const Text('Download'),
                     ),
@@ -112,17 +117,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        final re = await confirm(
-                            'Confirm Dialog', 'Do you want to press yes button? or no button?');
+                        final re = await confirm('Confirm Dialog',
+                            'Do you want to press yes button? or no button?');
 
-                        alert('Result', 'You have pressed ${re ? 'YES' : 'NO'} button');
+                        alert('Result',
+                            'You have pressed ${re ? 'YES' : 'NO'} button');
                       },
                       child: const Text('confirm'),
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        final re =
-                            await inputDialog('Input dialog box', 'What do you want to input?');
+                        final re = await inputDialog(
+                            'Input dialog box', 'What do you want to input?');
                         alert('Result', 'You have input; $re');
                       },
                       child: const Text('input dialog'),
@@ -143,7 +149,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text('Button', style: titleStyle),
                 Button(
                   text: 'Button',
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   backgroundColor: Colors.yellow[800]!,
                   color: white,
                 ),
@@ -167,7 +174,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Divider(),
                 Text('Select', style: titleStyle),
                 Select(
-                  options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
+                  options: const {
+                    'a': 'Apple',
+                    'b': 'Banana',
+                    'c': 'Cherry',
+                    'd': 'Durian'
+                  },
                   defaultValue: '',
                   selectedValue: '',
                   defaultLabel: 'Select category',
@@ -178,9 +190,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 Popup(
                   icon: const Icon(Icons.access_alarm_rounded),
                   options: {
-                    'a': PopupOption(icon: const Icon(Icons.addchart), label: 'Apple'),
-                    'b': PopupOption(icon: const Icon(Icons.bookmarks), label: 'Banana'),
-                    'c': PopupOption(icon: const Icon(Icons.cabin), label: 'Cherry'),
+                    'a': PopupOption(
+                        icon: const Icon(Icons.addchart), label: 'Apple'),
+                    'b': PopupOption(
+                        icon: const Icon(Icons.bookmarks), label: 'Banana'),
+                    'c': PopupOption(
+                        icon: const Icon(Icons.cabin), label: 'Cherry'),
                   },
                   initialValue: 'b',
                   onSelected: (v) => debugPrint(v),

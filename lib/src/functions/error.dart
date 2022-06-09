@@ -22,9 +22,12 @@ Future<void> error(e, [String title = 'ERROR']) {
   // If the error is a TypeError, then handle is nicely.
   else if (e.runtimeType.toString() == '_TypeError') {
     final errstr = e.toString();
-    if (errstr.contains('Future') && errstr.contains('is not a subtype of type')) {
+    if (errstr.contains('Future') &&
+        errstr.contains('is not a subtype of type')) {
       title = 'Await mistake';
-      content = 'It is a mistake.\n\nHe should use await on Future operation.\n\n' + e.toString();
+      content =
+          'It is a mistake.\n\nHe should use await on Future operation.\n\n' +
+              e.toString();
     } else {
       title = "Developer mistake!";
       content = 'Type error: ' + e.toString();

@@ -22,6 +22,7 @@ T getArg<T>(BuildContext context, String name, [dynamic defaultValue]) {
   final arguments = ModalRoute.of(context)!.settings.arguments;
   if (arguments == null) return defaultValue;
   // print('arguments; $arguments');
-  Map<String, dynamic> args = Map<String, dynamic>.from(arguments as Map<String, dynamic>);
+  Map<String, dynamic> args =
+      Map<String, dynamic>.from(arguments as Map<String, dynamic>);
   return args[name] == null ? defaultValue : args[name] as T;
 }
