@@ -55,8 +55,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final titleStyle = const TextStyle(
-      fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
+  final titleStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue);
 
   @override
   Widget build(BuildContext context) {
@@ -75,32 +74,28 @@ class _MyHomePageState extends State<MyHomePage> {
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (c) => const ExtendedRowScreen()),
+                        MaterialPageRoute(builder: (c) => const ExtendedRowScreen()),
                       ),
                       child: const Text('ExtendedRow'),
                     ),
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (c) => const ExtendedColumnScreen()),
+                        MaterialPageRoute(builder: (c) => const ExtendedColumnScreen()),
                       ),
                       child: const Text('ExtendedColumn'),
                     ),
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (c) => const GradientCardScreen()),
+                        MaterialPageRoute(builder: (c) => const GradientCardScreen()),
                       ),
                       child: const Text('Gradient Card'),
                     ),
                     ElevatedButton(
                       onPressed: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (c) => const DownloadScreen()),
+                        MaterialPageRoute(builder: (c) => const DownloadScreen()),
                       ),
                       child: const Text('Download'),
                     ),
@@ -117,18 +112,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        final re = await confirm('Confirm Dialog',
-                            'Do you want to press yes button? or no button?');
+                        final re = await confirm(
+                            'Confirm Dialog', 'Do you want to press yes button? or no button?');
 
-                        alert('Result',
-                            'You have pressed ${re ? 'YES' : 'NO'} button');
+                        alert('Result', 'You have pressed ${re ? 'YES' : 'NO'} button');
                       },
                       child: const Text('confirm'),
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        final re = await inputDialog(
-                            'Input dialog box', 'What do you want to input?');
+                        final re =
+                            await inputDialog('Input dialog box', 'What do you want to input?');
                         alert('Result', 'You have input; $re');
                       },
                       child: const Text('input dialog'),
@@ -146,19 +140,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 const Divider(),
-                Text('Button', style: titleStyle),
+                const Text('Button'),
                 Button(
                   text: 'Button',
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   backgroundColor: Colors.yellow[800]!,
                   color: white,
                 ),
                 const Divider(),
-                Text('Avatar', style: titleStyle),
+                const Text('Avatar'),
                 const Avatar(url: 'https://placekitten.com/200/200'),
                 const Divider(),
-                Text('TipBox', style: titleStyle),
+                const Text('TipBox'),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: TipBox(
@@ -172,36 +165,28 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 const Divider(),
-                Text('Select', style: titleStyle),
+                const Text('Select'),
                 Select(
-                  options: const {
-                    'a': 'Apple',
-                    'b': 'Banana',
-                    'c': 'Cherry',
-                    'd': 'Durian'
-                  },
+                  options: const {'a': 'Apple', 'b': 'Banana', 'c': 'Cherry', 'd': 'Durian'},
                   defaultValue: '',
                   selectedValue: '',
                   defaultLabel: 'Select category',
                   onChanged: (v) => debugPrint(v),
                 ),
                 const Divider(),
-                Text('Popup', style: titleStyle),
+                const Text('Popup'),
                 Popup(
                   icon: const Icon(Icons.access_alarm_rounded),
                   options: {
-                    'a': PopupOption(
-                        icon: const Icon(Icons.addchart), label: 'Apple'),
-                    'b': PopupOption(
-                        icon: const Icon(Icons.bookmarks), label: 'Banana'),
-                    'c': PopupOption(
-                        icon: const Icon(Icons.cabin), label: 'Cherry'),
+                    'a': PopupOption(icon: const Icon(Icons.addchart), label: 'Apple'),
+                    'b': PopupOption(icon: const Icon(Icons.bookmarks), label: 'Banana'),
+                    'c': PopupOption(icon: const Icon(Icons.cabin), label: 'Cherry'),
                   },
                   initialValue: 'b',
                   onSelected: (v) => debugPrint(v),
                 ),
                 const Divider(),
-                Text('ExtendedText', style: titleStyle),
+                const Text('ExtendedText'),
                 ExtendedText(
                   'This is extended text',
                   padding: const EdgeInsets.all(16),
@@ -211,7 +196,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: BoxDecoration(color: Colors.grey.shade300),
                   onTap: () => alert('ExtendedText', 'tapped'),
                 ),
-                const Text('''
+                const Text(
+                    '''
           ExtendedText(
             'This is extended text',
             padding: const EdgeInsets.all(16),
@@ -222,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onTap: () => alert('ExtendedText', 'tapped'),
           )
                 '''),
-                Text('ExtendedText enabling links', style: titleStyle),
+                const Text('ExtendedText enabling links'),
                 ExtendedText(
                   'This is link: https://google.com oo',
                   padding: const EdgeInsets.all(16),
@@ -232,7 +218,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   decoration: BoxDecoration(color: Colors.grey.shade300),
                   onTap: () => alert('onTap', 'onTap on ExtendedText'),
                 ),
-                Text('ExtendedText renderlink HTML', style: titleStyle),
+                const Text('ExtendedText renderlink HTML'),
                 ExtendedText(
                   'This is link: <a href="https://google.com">Tap to open google</a><br><p>Par<b>agra</b>ph</p>',
                   padding: const EdgeInsets.all(16),
