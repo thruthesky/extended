@@ -81,10 +81,18 @@ class _InputState extends State<Input> {
       controller = widget.controller;
     }
     // Subscribe
-    subscription = subject
-        .debounceTime(Duration(milliseconds: widget.debounceTime))
-        .distinct((a, b) => a == b)
-        .listen((value) {
+    // subscription = subject
+    //     .debounceTime(Duration(milliseconds: widget.debounceTime))
+    //     .distinct((a, b) => a == b)
+    //     .listen((value) {
+    //   // 원하는 코드를 이곳에서 작성
+    //   widget.onChanged(value, this);
+    // });
+    subscription =
+        subject.debounceTime(Duration(milliseconds: widget.debounceTime)).distinct((a, b) {
+      if (a == b) hideLoader();
+      return a == b;
+    }).listen((value) {
       // 원하는 코드를 이곳에서 작성
       widget.onChanged(value, this);
     });
